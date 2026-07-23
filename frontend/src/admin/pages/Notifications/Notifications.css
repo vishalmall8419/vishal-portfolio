@@ -1,0 +1,18 @@
+.admx-notif-icon {
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+}
+
+.admx-notif-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.admx-notif-details span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

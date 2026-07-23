@@ -1,0 +1,140 @@
+.admx-settings-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.admx-settings-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.admx-settings-tab:hover {
+  color: var(--text);
+}
+.admx-settings-tab.is-active {
+  border-color: var(--primary);
+  color: var(--text-on-accent);
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.2), rgba(0, 229, 255, 0.08));
+}
+
+.admx-settings-card {
+  padding: 26px;
+  border-radius: var(--radius-md);
+}
+
+.admx-tag-input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.admx-tag-input-row .admx-input {
+  flex: 1;
+}
+
+.admx-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.admx-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px 6px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  font-size: 0.84rem;
+}
+
+.admx-chip button {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+.admx-chip button:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.admx-priority-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admx-priority-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 0.88rem;
+  text-transform: capitalize;
+}
+
+.admx-priority-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.admx-priority-controls button {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.admx-priority-controls button:hover:not(:disabled) {
+  border-color: var(--primary);
+  color: var(--text);
+}
+
+.admx-priority-controls button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* AI Settings tab -- subsection headers + color swatches */
+.admx-form-subhead {
+  margin: 10px 0 -6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--admx-border, rgba(255, 255, 255, 0.08));
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted, #8a93a6);
+}
+
+.admx-color-input {
+  padding: 4px;
+  height: 42px;
+  cursor: pointer;
+}

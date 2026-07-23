@@ -1,0 +1,145 @@
+.vm-glass-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    padding: 30px;
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            155deg,
+            rgba(255, 255, 255, 0.10) 0%,
+            rgba(255, 255, 255, 0.05) 45%,
+            rgba(255, 255, 255, 0.02) 100%
+        );
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.20),
+        0 30px 80px rgba(0,0,0,.25),
+        inset 0 1px 1px rgba(255,255,255,.15);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease,
+        border-color .45s ease;
+}
+
+
+.vm-glass-card::before{
+    content:"";
+    position:absolute;
+    inset:1px;
+    border-radius:inherit;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.14),
+            transparent 35%
+        );
+
+    pointer-events:none;
+}
+
+
+.vm-glass-card::after{
+    content:"";
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    right:-120px;
+    top:-120px;
+
+    border-radius:50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(0,229,255,.22),
+        transparent 70%
+    );
+
+    filter:blur(40px);
+
+    opacity:.6;
+
+    transition:.6s;
+}
+
+
+.vm-hover:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.015);
+
+    border-color:rgba(0,229,255,.22);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.30),
+        0 35px 100px rgba(0,229,255,.10),
+        inset 0 1px 1px rgba(255,255,255,.18);
+}
+
+.vm-hover:hover::after{
+
+    transform:
+        scale(1.35)
+        rotate(20deg);
+
+    opacity:1;
+}
+
+[data-theme="light"] .vm-glass-card {
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+    box-shadow:
+        var(--shadow-sm),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="light"] .vm-glass-card::before {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 35%);
+}
+
+[data-theme="light"] .vm-hover:hover {
+    border-color: var(--primary-light);
+    box-shadow:
+        var(--shadow-md),
+        0 35px 100px rgba(108, 79, 224, 0.12),
+        inset 0 1px 1px rgba(255, 255, 255, 0.7);
+}
+
+
+.vm-glass-content{
+
+    position:relative;
+    z-index:5;
+}
+
+
+.vm-padding-sm{
+    padding:20px;
+}
+
+.vm-padding-md{
+    padding:30px;
+}
+
+.vm-padding-lg{
+    padding:42px;
+}.vm-glass-card:hover img,
+.vm-glass-card:hover svg{
+    transform: scale(1.08);
+    transition: .45s ease;
+}
+.vm-glass-card:hover .vm-btn{
+    transform: translateY(-2px);
+}

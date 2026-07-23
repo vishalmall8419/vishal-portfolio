@@ -1,0 +1,568 @@
+/* ===========================================================
+   HERO SECTION
+=========================================================== */
+
+.vm-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--glass-bg);
+}
+
+/* ===========================================================
+   BACKGROUND
+=========================================================== */
+
+.vm-hero-bg-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+.vm-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    radial-gradient(
+      circle at 82% 28%,
+      rgba(73, 114, 255, 0.22),
+      transparent 28%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(5, 8, 22, 0.98) 0%,
+      rgba(5, 8, 22, 0.95) 30%,
+      rgba(5, 8, 22, 0.82) 55%,
+      rgba(5, 8, 22, 0.35) 75%,
+      rgba(5, 8, 22, 0) 100%
+    );
+}
+
+.vm-stars {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background-image:
+    radial-gradient(circle, #fff 1.2px, transparent 1.2px),
+    radial-gradient(circle, #4d8cff 0.8px, transparent 0.8px);
+
+  background-size:
+    170px 170px,
+    120px 120px;
+
+  opacity: 0.15;
+}
+
+/* ===========================================================
+   GRID
+=========================================================== */
+
+.vm-hero-grid {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1450px, 92%);
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 46% 54%;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 0 40px;
+}
+
+/* ===========================================================
+   LEFT SIDE
+=========================================================== */
+
+.vm-hero-left {
+  max-width: 650px;
+}
+
+.vm-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 24px;
+
+  border-radius: 999px;
+
+  background: var(--glass-bg);
+
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(20px);
+
+  color: var(--text);
+
+  margin-bottom: 30px;
+}
+
+.vm-dot {
+  width: 10px;
+
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: #43ff8b;
+
+  box-shadow: 0 0 18px #43ff8b;
+}
+
+.vm-title {
+  font-size: clamp(3.5rem, 5vw, 5.4rem);
+
+  line-height: 1.05;
+
+  font-weight: 900;
+
+  color: var(--text);
+
+  margin-bottom: 25px;
+}
+
+.vm-title span {
+  display: block;
+
+  background: linear-gradient(90deg, #7b61ff, #00d8ff);
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.vm-description {
+  font-size: 1.08rem;
+
+  line-height: 1.9;
+
+  color: var(--text-light);
+
+  margin-bottom: 42px;
+}
+
+.vm-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.vm-resume-link {
+  display: inline-flex;
+
+  text-decoration: none;
+}
+
+/* ===========================================================
+   RIGHT SIDE
+=========================================================== */
+
+.vm-hero-right {
+  position: relative;
+
+  width: 100%;
+
+   height:clamp(650px,75vh,900px);
+   /* Agar browser support karta hai to isko use karega */
+    height: -webkit-fill-available;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* ===========================================================
+   PROFILE
+=========================================================== */
+
+.vm-profile {
+  position: absolute;
+
+  right: -40px;
+
+  top: 70px;
+
+  width: 700px;
+
+  height: 700px;
+
+  background-repeat: no-repeat;
+
+  background-position: center bottom;
+
+  background-size: cover;
+
+  filter: drop-shadow(0 0 25px rgba(60, 170, 255, 0.25));
+
+  z-index: 3;
+}
+
+.vm-profile::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 52%;
+
+  transform: translate(-50%, -50%);
+
+  width: 520px;
+
+  height: 520px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(102, 113, 255, 0.45),
+    rgba(0, 216, 255, 0.15),
+    transparent 70%
+  );
+
+  filter: blur(45px);
+
+  z-index: -1;
+}
+
+/* ===========================================================
+   PLATFORM
+=========================================================== */
+
+.vm-platform {
+  position: absolute;
+
+  left: 10%;
+
+  bottom: 120px;
+
+  width: 650px;
+
+  height: 110px;
+
+  transform: rotate(20deg);
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(75, 180, 255, 0.55);
+
+  box-shadow:
+    0 0 30px rgba(75, 180, 255, 0.5),
+    inset 0 0 20px rgba(75, 180, 255, 0.25);
+}
+
+.vm-platform::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 12px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(130, 220, 255, 0.35);
+}
+
+/* ===========================================================
+   TECH BOXES
+=========================================================== */
+
+.vm-tech {
+  position: absolute;
+
+  width: 100px;
+
+  height: 100px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background: var(--glass-bg);
+
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(20px);
+
+  color: var(--text);
+
+  font-size: 0.95rem;
+
+  z-index: 30;
+}
+
+.react {
+  top: 120px;
+
+  left: 90px;
+}
+
+.spring {
+  top: 170px;
+
+  right: 40px;
+}
+
+.java {
+  left: 120px;
+
+  bottom: 260px;
+}
+
+.mysql {
+  right: 80px;
+
+  bottom: 230px;
+}
+/* ===========================================================
+   2K / 4K
+=========================================================== */
+
+@media (min-width: 1600px) {
+  .vm-hero {
+    padding: 130px 0px 15px 0px;
+  }
+
+  .vm-hero-grid {
+    width: min(1650px, 90%);
+    grid-template-columns: 45% 55%;
+  }
+
+  .vm-title {
+    font-size: 6rem;
+  }
+
+  .vm-description {
+    font-size: 1.2rem;
+  }
+
+  .vm-hero-right {
+    height: 950px;
+  }
+
+  .vm-profile {
+    width: 760px;
+    height: 760px;
+    right: -20px;
+    top: 40px;
+  }
+
+  .vm-platform {
+    width: 720px;
+    height: 120px;
+    bottom: 130px;
+  }
+
+  .vm-tech {
+    width: 115px;
+    height: 115px;
+    font-size: 1rem;
+  }
+}
+
+/* ===========================================================
+   Desktop
+=========================================================== */
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .vm-hero {
+    padding: 130px 0px 15px 0px;
+  }
+  .vm-title {
+    font-size: 5rem;
+  }
+
+  .vm-hero-grid {
+    grid-template-columns: 46% 54%;
+  }
+}
+@media (min-width:992px) and (max-width:1199px){
+
+    .vm-hero{
+        padding:110px 0 20px;
+    }
+
+    .vm-hero-grid{
+
+        width:94%;
+
+        grid-template-columns:45% 55%;
+
+        gap:15px;
+
+    }
+
+    .vm-title{
+
+        font-size:3.2rem;
+
+    }
+
+    .vm-description{
+
+        font-size:1rem;
+
+    }
+
+    .vm-profile{
+
+        width:520px;
+
+        height:520px;
+
+        right:-30px;
+
+        top:90px;
+
+    }
+
+    .vm-platform{
+
+        width:470px;
+
+        height:90px;
+
+        left:40px;
+
+        bottom:120px;
+
+    }
+
+    .vm-tech{
+
+        width:78px;
+
+        height:78px;
+
+        font-size:.78rem;
+
+    }
+
+}
+@media (min-width:768px) and (max-width:991px){
+
+    .vm-hero{
+
+        padding:110px 0 40px;
+
+    }
+
+    .vm-hero-grid{
+
+        width:92%;
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .vm-hero-left{
+
+        max-width:720px;
+
+        margin:auto;
+
+    }
+
+    .vm-buttons{
+
+        justify-content:center;
+
+    }
+
+    .vm-hero-right{
+
+        display:none;
+
+    }
+
+}
+@media (max-width:767px){
+
+    .vm-hero{
+
+        padding:100px 0 50px;
+
+    }
+
+    .vm-hero-grid{
+
+        width:92%;
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        padding:0;
+
+    }
+
+    .vm-hero-left{
+
+        max-width:100%;
+
+    }
+
+    .vm-title{
+
+        font-size:2.2rem;
+
+        line-height:1.2;
+
+    }
+
+    .vm-description{
+
+        font-size:.95rem;
+
+    }
+
+    .vm-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .vm-buttons>*{
+
+        width:100%;
+
+    }
+
+    .vm-hero-right{
+
+        display:none;
+
+    }
+
+}

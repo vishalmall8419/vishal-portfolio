@@ -1,0 +1,127 @@
+.certd-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.certd-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+.certd-state {
+  padding: 200px 8% 100px;
+  text-align: center;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.certd-hero {
+  padding: 160px 0 30px;
+}
+
+.certd-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-light);
+  text-decoration: none;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.certd-back-link:hover {
+  color: var(--primary);
+}
+
+.certd-meta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.certd-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.certd-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+}
+
+.certd-brief {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 720px;
+  margin-bottom: 24px;
+}
+
+.certd-verify-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.certd-verify-btn:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-on-accent);
+  border-color: transparent;
+}
+
+.certd-image-wrap {
+  margin-bottom: 40px;
+}
+
+.certd-image {
+  width: 100%;
+  border-radius: 24px;
+  object-fit: cover;
+  max-height: 480px;
+}
+
+.certd-body {
+  padding-bottom: 120px;
+}
+
+.certd-body p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+}
+
+.certd-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.certd-gallery img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  height: 200px;
+}

@@ -1,0 +1,105 @@
+
+
+.vm-services {
+  padding: 140px 8%;
+  position: relative;
+}
+
+.vm-services-container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.vm-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.vm-service-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.vm-service-card {
+  position: relative;
+  min-height: 300px;
+  cursor: pointer;
+  transition: all 0.45s ease;
+}
+
+.vm-service-card:hover {
+  transform: translateY(-12px);
+}
+
+.vm-service-number {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 30px;
+
+  background: linear-gradient(
+    135deg,
+    #6C63FF,
+    #00E5FF
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  opacity: .35;
+}
+
+.vm-service-card h3 {
+  color: var(--text);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.vm-service-card p {
+  color: var(--text-light);
+  line-height: 1.9;
+}
+
+.vm-service-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 30px;
+  bottom: 25px;
+
+  width: 60px;
+  height: 4px;
+
+  border-radius: 50px;
+
+  background: linear-gradient(
+    90deg,
+    #6C63FF,
+    #00E5FF
+  );
+
+  transition: .4s;
+}
+
+.vm-service-card:hover::after {
+  width: 120px;
+}
+
+@media (max-width:1100px) {
+
+  .vm-services-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .vm-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

@@ -1,0 +1,39 @@
+.vm-marquee{
+    width:100%;
+    overflow:hidden;
+    padding:30px 0;
+    border-top:1px solid var(--glass-border);
+    border-bottom:1px solid var(--glass-border);
+    background: var(--glass-bg);
+    backdrop-filter:blur(20px);
+}
+
+.vm-track{
+    display:flex;
+    width:max-content;
+    animation:marquee 30s linear infinite;
+}
+
+.vm-item{
+    margin:0 40px;
+    color: var(--text);
+    font-size:1.2rem;
+    font-weight:600;
+    white-space:nowrap;
+}
+
+.vm-item:hover{
+    color:#00E5FF;
+}
+
+@keyframes marquee{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}

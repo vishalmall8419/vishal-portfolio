@@ -1,0 +1,543 @@
+/* ADMIN DASHBOARD DESIGN SYSTEM
+   Prefix: admx-
+   Built entirely on the portfolio's existing tokens
+   (--primary, --bg, --surface, --glass-*, --radius-*, --text*)
+   defined in src/styles/variables.css. Nothing here redefines
+   the brand palette — it only adds dashboard-specific layout,
+   scoped so it can never leak into or clash with public pages. */
+
+.admx-root {
+  --admx-sidebar-w: 272px;
+  --admx-sidebar-w-collapsed: 84px;
+  --admx-topbar-h: 76px;
+
+  /* Premium admin accents — reuse the portfolio's Projects-page
+     visual language (purple gradients, cyan accents, orange highlights)
+     without redefining the global brand tokens. */
+  --admx-orange: #f5a623;
+  --admx-orange-light: #ffc25c;
+  --admx-cyan: var(--secondary);
+  --admx-grad-brand: linear-gradient(135deg, var(--primary) 0%, var(--accent) 55%, var(--admx-cyan) 100%);
+  --admx-grad-warm: linear-gradient(135deg, var(--admx-orange) 0%, #ff7a59 100%);
+  --admx-ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+.admx-root * {
+  box-sizing: border-box;
+}
+
+.admx-root a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.admx-root ::selection {
+  background: var(--primary);
+  color: var(--text-on-accent);
+}
+
+/* Ambient background glow, consistent with the portfolio's hero glow */
+.admx-bg-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(620px circle at 8% -4%, rgba(108, 99, 255, 0.18), transparent 55%),
+    radial-gradient(520px circle at 92% 8%, rgba(124, 58, 237, 0.12), transparent 55%),
+    radial-gradient(560px circle at 88% 102%, rgba(0, 229, 255, 0.11), transparent 55%),
+    radial-gradient(420px circle at 4% 96%, rgba(245, 166, 35, 0.08), transparent 55%);
+  background-attachment: fixed;
+}
+
+/* Faint grid, matching the Projects page hero texture */
+.admx-bg-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 20%, transparent 75%);
+}
+
+/* Scrollbar to match dark theme */
+.admx-root ::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+.admx-root ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.admx-root ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(108, 99, 255, 0.45), rgba(0, 229, 255, 0.3));
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.admx-root ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(108, 99, 255, 0.7), rgba(0, 229, 255, 0.5));
+  background-clip: padding-box;
+}
+.admx-root {
+  scrollbar-color: rgba(108, 99, 255, 0.45) transparent;
+  scrollbar-width: thin;
+}
+
+.admx-glass {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.04) 50%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  z-index: 9;
+}
+
+/* Subtle gradient hairline along the edge — the "premium card" signature */
+.admx-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.35), rgba(0, 229, 255, 0.12) 45%, rgba(245, 166, 35, 0.18));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.admx-glass:hover::before {
+  opacity: 1;
+}
+
+.admx-page {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  padding: 28px 32px 60px;
+}
+
+.admx-page-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.admx-page-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  background: linear-gradient(120deg, #fff 45%, var(--primary-light) 80%, var(--admx-orange-light) 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.admx-page-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.admx-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+.admx-breadcrumb span.admx-current {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.admx-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 11px 22px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  transition: transform 0.3s var(--admx-ease), box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.admx-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.admx-btn-primary {
+  background: var(--admx-grad-brand);
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+  border-color: transparent;
+}
+.admx-btn-primary:hover {
+  transform: translateY(-2px);
+  background-position: 100% 50%;
+  box-shadow: 0 14px 34px rgba(108, 99, 255, 0.38), 0 4px 14px rgba(0, 229, 255, 0.14);
+}
+
+.admx-btn-outline {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-light);
+}
+.admx-btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--text);
+  background: rgba(108, 99, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.admx-btn-warm {
+  background: var(--admx-grad-warm);
+  border-color: transparent;
+  color: #1a1204;
+}
+.admx-btn-warm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(245, 166, 35, 0.35);
+}
+
+.admx-btn-danger {
+  background: rgba(255, 76, 96, 0.12);
+  border-color: rgba(255, 76, 96, 0.3);
+  color: #ff7a88;
+}
+.admx-btn-danger:hover {
+  background: rgba(255, 76, 96, 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(255, 76, 96, 0.22);
+}
+
+.admx-btn-icon {
+  padding: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+}
+
+.admx-btn-sm {
+  padding: 7px 14px;
+  font-size: 0.82rem;
+}
+
+.admx-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.admx-field {
+  margin-bottom: 18px;
+}
+
+.admx-label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+
+.admx-label .admx-req {
+  color: #ff7a88;
+  margin-left: 3px;
+}
+
+.admx-input,
+.admx-textarea,
+.admx-select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.admx-input:hover,
+.admx-textarea:hover,
+.admx-select:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.admx-textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.6;
+}
+
+.admx-input:focus,
+.admx-textarea:focus,
+.admx-select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(108, 99, 255, 0.07);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.16), 0 0 0 1px rgba(0, 229, 255, 0.12);
+}
+
+.admx-input::placeholder,
+.admx-textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.admx-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%238f9bb3' stroke-width='2' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.admx-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.admx-error {
+  font-size: 0.78rem;
+  color: #ff7a88;
+  margin-top: 6px;
+}
+
+.admx-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.admx-checkbox-row input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.admx-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 20px;
+}
+.admx-form-grid .admx-span-2 {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 760px) {
+  .admx-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.admx-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+.admx-badge-success { background: rgba(46, 213, 115, 0.14); color: #2ed573; border: 1px solid rgba(46, 213, 115, 0.25); }
+.admx-badge-muted { background: rgba(255, 255, 255, 0.08); color: var(--text-muted); border: 1px solid rgba(255, 255, 255, 0.1); }
+.admx-badge-warning { background: rgba(245, 166, 35, 0.14); color: var(--admx-orange-light); border: 1px solid rgba(245, 166, 35, 0.28); }
+.admx-badge-danger { background: rgba(255, 76, 96, 0.14); color: #ff7a88; border: 1px solid rgba(255, 76, 96, 0.28); }
+.admx-badge-primary { background: rgba(108, 99, 255, 0.16); color: var(--primary-light); border: 1px solid rgba(108, 99, 255, 0.3); }
+
+.admx-spinner {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(255, 255, 255, 0.14);
+  border-top-color: var(--primary);
+  border-right-color: var(--admx-cyan);
+  animation: admx-spin 0.7s linear infinite;
+}
+@keyframes admx-spin { to { transform: rotate(360deg); } }
+
+.admx-loading-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 0;
+  color: var(--text-muted);
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.admx-empty {
+  text-align: center;
+  padding: 64px 24px;
+  color: var(--text-muted);
+  animation: admx-fade-in 0.35s ease;
+}
+.admx-empty svg {
+  font-size: 2.6rem;
+  opacity: 0.55;
+  margin-bottom: 16px;
+  color: var(--primary-light);
+  filter: drop-shadow(0 0 18px rgba(108, 99, 255, 0.28));
+  animation: admx-float 3.2s ease-in-out infinite;
+}
+.admx-empty p {
+  margin: 0;
+  font-size: 0.92rem;
+}
+@keyframes admx-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.admx-toast-wrap {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.admx-toast {
+  min-width: 260px;
+  max-width: 360px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-md);
+  animation: admx-toast-in 0.35s var(--admx-ease);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.admx-toast-success { background: rgba(46, 213, 115, 0.18); border-color: rgba(46, 213, 115, 0.3); }
+.admx-toast-error { background: rgba(255, 76, 96, 0.2); border-color: rgba(255, 76, 96, 0.32); }
+.admx-toast-info { background: rgba(108, 99, 255, 0.2); border-color: rgba(108, 99, 255, 0.32); }
+@keyframes admx-toast-in {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 900px) {
+  .admx-page { padding: 20px 16px 50px; }
+}
+
+@media (max-width: 560px) {
+  .admx-page { padding: 16px 12px 40px; }
+  .admx-page-head { margin-bottom: 20px; }
+  .admx-btn { padding: 10px 16px; font-size: 0.86rem; }
+  .admx-toast-wrap { top: 12px; right: 12px; left: 12px; }
+  .admx-toast { min-width: 0; max-width: none; width: 100%; }
+}
+
+/* Light mode (dashboard UI only — scoped to .admx-root,
+   never touches the public portfolio's --bg/--text tokens) */
+[data-admx-mode="light"] .admx-root {
+  --bg: #f4effc;
+  --bg-secondary: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #ede6fa;
+  --text: #211a35;
+  --text-light: #4a4166;
+  --text-muted: #6d6488;
+  --border: rgba(108, 79, 224, 0.16);
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(108, 79, 224, 0.14);
+  --shadow-sm: 0 8px 20px rgba(108, 79, 224, 0.08);
+  --shadow-md: 0 15px 40px rgba(108, 79, 224, 0.12);
+}
+
+[data-admx-mode="light"] .admx-bg-glow {
+  opacity: 0.5;
+}
+
+/* Full responsive breakpoint ladder for the Admin Panel.
+   Appended at the end of the file (after every base rule above) so these
+   overrides always win the cascade at equal specificity, regardless of
+   which selector each rule shares with earlier declarations. Covers the
+   standard device set: 320 / 375 / 425 / 576 / 768 / 992 / 1200 / 1440 / 1920.
+*/
+
+@media (max-width: 1920px) {
+  .admx-page { max-width: 1800px; margin: 0 auto; }
+}
+
+@media (max-width: 1440px) {
+  .admx-page { max-width: 1280px; }
+}
+
+@media (max-width: 1200px) {
+  .admx-form-grid { gap: 0 16px; }
+}
+
+@media (max-width: 992px) {
+  .admx-page-head { flex-wrap: wrap; gap: 12px; }
+}
+
+@media (max-width: 768px) {
+  .admx-page-title { font-size: 1.4rem; }
+  .admx-form-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px) {
+  .admx-page { padding: 14px 10px 36px; }
+  .admx-settings-tabs { overflow-x: auto; flex-wrap: nowrap; }
+  .admx-form-grid > .admx-span-2 > .admx-btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 425px) {
+  .admx-badge { font-size: 0.68rem; padding: 3px 10px; }
+  .admx-input { font-size: 0.9rem; }
+}
+
+@media (max-width: 375px) {
+  .admx-page { padding: 12px 8px 32px; }
+  .admx-toast { font-size: 0.82rem; padding: 12px 14px; }
+}
+
+@media (max-width: 320px) {
+  .admx-page-title { font-size: 1.2rem; }
+  .admx-empty svg { font-size: 2.1rem; }
+}

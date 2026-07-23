@@ -1,0 +1,22 @@
+.admx-gallery-filter-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.admx-gallery-filter-row .admx-select {
+  min-width: 220px;
+}
+
+.admx-featured-on {
+  color: #f5a623;
+}
+
+@media (max-width: 576px) {
+  .admx-gallery-filter-row {
+    justify-content: stretch;
+  }
+  .admx-gallery-filter-row .admx-select {
+    width: 100%;
+  }
+}

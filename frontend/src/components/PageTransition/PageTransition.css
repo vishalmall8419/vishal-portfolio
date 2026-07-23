@@ -1,0 +1,29 @@
+.vm-page-transition{
+
+    width:100%;
+
+    min-height:100vh;
+
+    animation:fadePage .6s ease;
+
+}
+
+@keyframes fadePage{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

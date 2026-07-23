@@ -1,0 +1,162 @@
+.ach-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.ach-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+.ach-hero {
+  padding: 160px 0 40px;
+}
+
+.ach-toolbar {
+  padding: 20px 0 40px;
+}
+
+.ach-toolbar-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ach-search {
+  width: 100%;
+  max-width: 480px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.ach-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ach-filter-chip {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.ach-filter-chip.is-active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-on-accent);
+  border-color: transparent;
+}
+
+.ach-grid-section {
+  padding: 20px 0 100px;
+}
+
+.ach-state {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.ach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.ach-card {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ach-card-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.ach-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ach-card-tag {
+  display: inline-block;
+  width: fit-content;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--surface-2);
+  color: var(--primary);
+}
+
+.ach-card-body h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.ach-card-date {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.ach-card-body p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.ach-card-link {
+  margin-top: 8px;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ach-card-link:hover {
+  text-decoration: underline;
+}
+
+.ach-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.ach-pagination button {
+  padding: 10px 22px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.ach-pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .ach-hero {
+    padding: 120px 0 30px;
+  }
+}

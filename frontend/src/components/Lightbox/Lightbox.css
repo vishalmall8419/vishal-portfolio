@@ -1,0 +1,127 @@
+.vm-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(3, 5, 14, 0.94);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: vm-lightbox-fade 0.25s ease;
+}
+
+@keyframes vm-lightbox-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.vm-lightbox-stage {
+  max-width: 90vw;
+  max-height: 84vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vm-lightbox-image {
+  max-width: 90vw;
+  max-height: 84vh;
+  object-fit: contain;
+  border-radius: 10px;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+}
+
+.vm-lightbox-image.is-zoomed {
+  cursor: zoom-out;
+  transform: scale(1.6);
+}
+
+.vm-lightbox-close,
+.vm-lightbox-zoom,
+.vm-lightbox-nav {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-on-accent);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.vm-lightbox-close {
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+.vm-lightbox-zoom {
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+}
+
+.vm-lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  z-index: 2;
+}
+
+.vm-lightbox-prev { left: 24px; }
+.vm-lightbox-next { right: 24px; }
+
+.vm-lightbox-close:hover,
+.vm-lightbox-zoom:hover,
+.vm-lightbox-nav:hover {
+  background: linear-gradient(135deg, #6C63FF, #00E5FF);
+  border-color: transparent;
+}
+
+.vm-lightbox-counter {
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #cfd4e6;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .vm-lightbox-nav { width: 42px; height: 42px; font-size: 1.2rem; }
+  .vm-lightbox-prev { left: 10px; }
+  .vm-lightbox-next { right: 10px; }
+}
+
+@media (max-width: 576px) {
+  .vm-lightbox-close { top: 14px; right: 14px; width: 38px; height: 38px; }
+  .vm-lightbox-counter { top: 16px; font-size: 0.8rem; }
+  .vm-lightbox-zoom { bottom: 14px; width: 38px; height: 38px; }
+}
+
+@media (max-width: 425px) {
+  .vm-lightbox-nav { width: 36px; height: 36px; font-size: 1.05rem; }
+}
+
+@media (max-width: 375px) {
+  .vm-lightbox-image { max-width: 94vw; }
+}
+
+@media (max-width: 320px) {
+  .vm-lightbox-nav { display: none; }
+}

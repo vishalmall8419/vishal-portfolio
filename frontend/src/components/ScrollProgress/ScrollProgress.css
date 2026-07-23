@@ -1,0 +1,27 @@
+.vm-scroll-progress{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    height:4px;
+
+    width:0;
+
+    z-index:999999;
+
+    background:linear-gradient(
+        90deg,
+        #6C63FF,
+        #00E5FF
+    );
+
+    box-shadow:
+    0 0 20px rgba(108,99,255,.6),
+    0 0 40px rgba(0,229,255,.3);
+
+    transition:width .1s linear;
+
+}

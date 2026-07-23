@@ -1,0 +1,128 @@
+.gp-section {
+  padding: 100px 0;
+}
+
+.gp-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+.gp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.gp-card {
+  position: relative;
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  text-decoration: none;
+}
+
+.gp-card:first-child,
+.gp-card:nth-child(6) {
+  grid-row: span 2;
+  aspect-ratio: auto;
+}
+
+.gp-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gp-card:hover img {
+  transform: scale(1.1);
+}
+
+.gp-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.78));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.gp-card:hover .gp-card-overlay {
+  opacity: 1;
+}
+
+.gp-card-title {
+  color: var(--text-on-accent);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.gp-card-cat {
+  color: var(--text-light);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gp-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.gp-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 34px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.gp-cta-btn:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-on-accent);
+  border-color: transparent;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 1200px) {
+  .gp-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 992px) {
+  .gp-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+}
+
+@media (max-width: 768px) {
+  .gp-grid { grid-template-columns: repeat(2, 1fr); }
+  .gp-card:first-child,
+  .gp-card:nth-child(6) { grid-row: span 1; aspect-ratio: 1; }
+}
+
+@media (max-width: 576px) {
+  .gp-section { padding: 70px 0; }
+  .gp-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+@media (max-width: 425px) {
+  .gp-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 375px) {
+  .gp-grid { gap: 10px; }
+}
+
+@media (max-width: 320px) {
+  .gp-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,251 @@
+.gal-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.gal-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+.gal-hero {
+  padding: 160px 0 30px;
+}
+
+.gal-toolbar {
+  padding: 10px 0 40px;
+}
+
+.gal-toolbar-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gal-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 480px;
+  padding: 12px 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+}
+
+.gal-search-wrap input {
+  flex: 1;
+  border: none;
+  background: none;
+  outline: none;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.gal-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gal-filter-chip {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-light);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.gal-filter-chip.is-active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-on-accent);
+  border-color: transparent;
+}
+
+.gal-grid-section {
+  padding: 10px 0 100px;
+}
+
+.gal-empty-state {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* Masonry via CSS multi-column layout — no JS layout calculation needed */
+.gal-grid {
+  column-count: 3;
+  column-gap: 24px;
+}
+
+.gal-card {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.gal-card-image-btn {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  overflow: hidden;
+}
+
+.gal-card-image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gal-card-image-btn:hover .gal-card-image {
+  transform: scale(1.08);
+}
+
+.gal-card-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.75));
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  text-align: left;
+}
+
+.gal-card-image-btn:hover .gal-card-overlay {
+  opacity: 1;
+}
+
+.gal-card-overlay-title {
+  color: var(--text-on-accent);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.gal-card-overlay-cat {
+  color: var(--text-light);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gal-card-link {
+  padding: 12px 18px;
+  text-align: center;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-top: 1px solid var(--border);
+}
+
+.gal-card-link:hover {
+  text-decoration: underline;
+}
+
+.gal-load-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.gal-load-more {
+  padding: 14px 36px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.gal-load-more:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--text-on-accent);
+  border-color: transparent;
+  transform: translateY(-3px);
+}
+
+.gal-loading-more {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--text-muted);
+}
+
+.gal-skeleton-card {
+  break-inside: avoid;
+  margin-bottom: 24px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface-2) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: gal-shimmer 1.4s ease-in-out infinite;
+}
+
+.gal-skeleton-h1 { height: 260px; }
+.gal-skeleton-h2 { height: 340px; }
+.gal-skeleton-h3 { height: 200px; }
+
+@keyframes gal-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gal-skeleton-card { animation: none; }
+}
+
+@media (max-width: 1440px) {
+  .gal-grid { column-count: 3; }
+}
+
+@media (max-width: 1200px) {
+  .gal-grid { column-count: 3; column-gap: 20px; }
+}
+
+@media (max-width: 992px) {
+  .gal-grid { column-count: 2; }
+}
+
+@media (max-width: 768px) {
+  .gal-hero { padding: 130px 0 24px; }
+  .gal-grid { column-count: 2; column-gap: 16px; }
+  .gal-card { margin-bottom: 16px; }
+}
+
+@media (max-width: 576px) {
+  .gal-grid { column-count: 1; }
+}
+
+@media (max-width: 425px) {
+  .gal-search-wrap { padding: 10px 16px; }
+  .gal-filter-chip { padding: 7px 14px; font-size: 0.82rem; }
+}
+
+@media (max-width: 375px) {
+  .gal-hero { padding: 110px 0 18px; }
+}
+
+@media (max-width: 320px) {
+  .gal-container { padding: 0 6%; }
+}

@@ -1,0 +1,8 @@
+# Replace https://your-domain.com below with the actual production domain
+# once deployed — search engines expect an absolute URL here.
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+
+Sitemap: https://your-domain.com/sitemap.xml

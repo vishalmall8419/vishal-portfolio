@@ -1,0 +1,29 @@
+.admx-cell-thumb-wrap {
+  display: inline-flex;
+}
+
+.admx-cell-thumb-placeholder {
+  background: rgba(255, 255, 255, 0.06);
+  display: inline-block;
+}
+
+.admx-progress-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 140px;
+}
+
+.admx-progress-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.admx-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}

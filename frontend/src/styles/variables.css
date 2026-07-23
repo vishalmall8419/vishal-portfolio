@@ -1,0 +1,86 @@
+:root {
+  /* Brand Colors
+     Purple -> blue -> amber gradient family, matched to the
+     project-page reference (headline gradient, CTA button, glow dot). */
+  --primary: #7c5cff;
+  --primary-light: #a78bfa;
+  --secondary: #4f8cff;
+  --accent: #f5a623;
+
+  --bg: #05060d;
+  --bg-secondary: #0a0d1c;
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-2: rgba(255, 255, 255, 0.08);
+
+  --text: #ffffff;
+  --text-light: #b7bfd6;
+  --text-muted: #7d87a3;
+
+  --border: rgba(255, 255, 255, 0.09);
+
+  --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 15px 40px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 25px 70px rgba(0, 0, 0, 0.5);
+
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-blur: blur(18px);
+
+  /* Glow (new -- used for premium hover/focus accents,
+     additive, safe to ignore where not adopted) */
+  --glow-primary: 0 0 40px rgba(124, 92, 255, 0.35);
+  --glow-secondary: 0 0 40px rgba(79, 140, 255, 0.3);
+  --gradient-primary: linear-gradient(135deg, #7c5cff 0%, #4f8cff 55%, #f5a623 100%);
+  --gradient-surface: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+
+  --transition: all 0.35s ease;
+
+  --container: 1320px;
+
+  /* On-color text (constant in both themes -- for text/icons
+     that sit on a solid or vivid gradient surface, e.g. primary
+     buttons, badges, active nav states, brand logo chips) */
+  --text-on-accent: #ffffff;
+}
+
+/* Light Theme Overrides
+   Applied when <html data-theme="light">. Without this block the toggle
+   flips the attribute + localStorage but nothing visually changes, since
+   every component reads these same var names. */
+[data-theme="light"] {
+  /* Brand -- deeper purple than dark mode so it still reads on white */
+  --primary: #6c4fe0;
+  --primary-light: #8b6ef0;
+  --secondary: #3f6fe0;
+  --accent: #e08e1a;
+
+  /* Backgrounds -- soft lavender wash, not flat white */
+  --bg: #f4effc;
+  --bg-secondary: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #ede6fa;
+
+  /* Text -- deep plum, never white/light in this mode */
+  --text: #211a35;
+  --text-light: #4a4166;
+  --text-muted: #6d6488;
+
+  --border: rgba(108, 79, 224, 0.16);
+
+  --shadow-sm: 0 8px 20px rgba(108, 79, 224, 0.08);
+  --shadow-md: 0 15px 40px rgba(108, 79, 224, 0.12);
+  --shadow-lg: 0 25px 70px rgba(108, 79, 224, 0.16);
+
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(108, 79, 224, 0.14);
+
+  --glow-primary: 0 0 40px rgba(108, 79, 224, 0.18);
+  --glow-secondary: 0 0 40px rgba(63, 111, 224, 0.16);
+  --gradient-primary: linear-gradient(135deg, #6c4fe0 0%, #3f6fe0 55%, #e08e1a 100%);
+  --gradient-surface: linear-gradient(180deg, #ffffff 0%, #f4effc 100%);
+}

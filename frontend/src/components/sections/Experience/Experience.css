@@ -1,0 +1,140 @@
+
+.vm-experience {
+    position: relative;
+    padding: 140px 8%;
+    overflow: hidden;
+}
+
+.vm-experience-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.vm-experience-list {
+    display: grid;
+    gap: 35px;
+}
+
+.vm-experience-card {
+    position: relative;
+    padding: 35px 35px 35px 150px;
+    border-radius: 24px;
+
+    overflow: hidden;
+    isolation: isolate;
+
+    transition: all .4s ease;
+}
+
+.vm-experience-card:hover {
+    transform: translateY(-10px);
+}
+
+.vm-exp-year {
+    position: absolute;
+    left: 35px;
+    top: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 95px;
+    height: 42px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(
+        135deg,
+        #6C63FF,
+        #00E5FF
+    );
+
+    color: var(--text-on-accent);
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.vm-experience-card h3 {
+    color: var(--text);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.vm-experience-card h4 {
+    color: #00E5FF;
+    margin-bottom: 18px;
+}
+
+.vm-experience-card p {
+    color: var(--text-light);
+    line-height: 1.9;
+}
+
+
+@media (max-width: 992px) {
+
+    .vm-experience {
+        padding: 100px 6%;
+    }
+
+    .vm-experience-card {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .vm-exp-year {
+        position: static;
+        margin: 0 auto 20px;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .vm-experience {
+        padding: 80px 5%;
+    }
+
+    .vm-experience-card {
+        padding: 25px;
+    }
+
+    .vm-experience-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .vm-experience-card h4 {
+        font-size: 1rem;
+    }
+
+    .vm-experience-card p {
+        font-size: .95rem;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .vm-experience {
+        padding: 70px 20px;
+    }
+
+    .vm-experience-card {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .vm-exp-year {
+        min-width: 80px;
+        height: 36px;
+        font-size: .75rem;
+    }
+
+    .vm-experience-card h3 {
+        font-size: 1.4rem;
+    }
+
+}

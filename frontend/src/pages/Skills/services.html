@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+/* ===================================================================
+   RESET (page-level only, does not leak — html/body are the document root)
+   =================================================================== */
+html, body { margin: 0; padding: 0; background: #06070c; }
+
+/* ===================================================================
+   TOKENS — scoped to .srvx-page, isolated from rest of site
+   =================================================================== */
+
+.srvx-page {
+  --srvx-bg-void: #06070c;
+  --srvx-bg-surface: #0d0f1a;
+  --srvx-bg-surface-2: #12152280;
+  --srvx-ink: #f3f4f8;
+  --srvx-ink-dim: #9ca1b8;
+  --srvx-ink-faint: #565b73;
+  --srvx-line: rgba(255, 255, 255, 0.08);
+  --srvx-line-strong: rgba(255, 255, 255, 0.16);
+
+  --srvx-accent-indigo: #6366f1;
+  --srvx-accent-violet: #8b5cf6;
+  --srvx-accent-amber: #f5a623;
+
+  --srvx-grad-primary: linear-gradient(135deg, var(--srvx-accent-indigo), var(--srvx-accent-violet));
+  --srvx-grad-warm: linear-gradient(135deg, var(--srvx-accent-amber), #ff7a59);
+
+  --srvx-font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --srvx-font-body: "Inter", "Segoe UI", sans-serif;
+  --srvx-font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  --srvx-radius-lg: 24px;
+  --srvx-radius-md: 16px;
+  --srvx-radius-sm: 10px;
+
+  --srvx-ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+
+  background: var(--srvx-bg-void);
+  color: var(--srvx-ink);
+  font-family: var(--srvx-font-body);
+  overflow-x: clip;
+  margin-top: 15px;
+  isolation: isolate;
+}
+
+.srvx-page * {
+  box-sizing: border-box;
+}
+
+.srvx-page ::selection {
+  background: var(--srvx-accent-violet);
+  color: #fff;
+}
+
+/* ===================================================================
+   SHARED PRIMITIVES
+   =================================================================== */
+
+.srvx-page .srvx-section {
+  position: relative;
+  padding: clamp(50px, 8vw, 90px) clamp(20px, 5vw, 60px);
+}
+
+.srvx-page .srvx-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.srvx-page .srvx-eyebrow {
+  display: inline-block;
+  font-family: var(--srvx-font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--srvx-accent-amber);
+  margin-bottom: 18px;
+}
+
+.srvx-page .srvx-heading {
+  max-width: 640px;
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+
+.srvx-page .srvx-heading--center {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.srvx-page .srvx-title {
+  font-family: var(--srvx-font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+
+.srvx-page .srvx-subtitle {
+  font-size: 1.05rem;
+  color: var(--srvx-ink-dim);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.srvx-page .srvx-glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--srvx-line);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.srvx-page .srvx-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--srvx-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--srvx-ink-dim);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--srvx-line);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.srvx-page .srvx-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 30px;
+  border-radius: 999px;
+  background: var(--srvx-grad-primary);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.4s var(--srvx-ease-premium), box-shadow 0.4s ease;
+}
+
+.srvx-page .srvx-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px -12px rgba(99, 102, 241, 0.55);
+}
+
+.srvx-page .srvx-button--ghost {
+  background: transparent;
+  border: 1px solid var(--srvx-line-strong);
+  color: var(--srvx-ink);
+}
+
+.srvx-page .srvx-button--ghost:hover {
+  box-shadow: none;
+  border-color: var(--srvx-accent-violet);
+}
+
+.srvx-page .srvx-button__arrow {
+  transition: transform 0.3s ease;
+}
+
+.srvx-page .srvx-button:hover .srvx-button__arrow {
+  transform: translateX(4px);
+}
+
+/* ===================================================================
+   HERO
+   =================================================================== */
+
+.srvx-page .srvx-hero {
+  position: relative;
+  min-height: 92svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+  overflow: hidden;
+}
+
+.srvx-page .srvx-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 20%, transparent 75%);
+  z-index: 0;
+}
+
+.srvx-page .srvx-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.srvx-page .srvx-glow--a {
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, var(--srvx-accent-indigo), transparent 70%);
+  top: -10%;
+  left: -8%;
+}
+
+.srvx-page .srvx-glow--b {
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, var(--srvx-accent-amber), transparent 70%);
+  bottom: -14%;
+  right: -6%;
+}
+
+.srvx-page .srvx-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+}
+
+.srvx-page .srvx-hero-eyebrow {
+  display: inline-block;
+  font-family: var(--srvx-font-mono);
+  font-size: 0.85rem;
+  color: var(--srvx-accent-amber);
+  margin-bottom: 28px;
+  letter-spacing: 0.02em;
+}
+
+.srvx-page .srvx-hero-title {
+  font-family: var(--srvx-font-display);
+  font-weight: 700;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin: 0 0 28px;
+}
+
+.srvx-page .srvx-hero-title__accent {
+  background: linear-gradient(120deg, #fff 40%, var(--srvx-accent-violet) 70%, var(--srvx-accent-amber) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.srvx-page .srvx-hero-sub {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  color: var(--srvx-ink-dim);
+  max-width: 580px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.srvx-page .srvx-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.srvx-page .srvx-hero-stats {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: clamp(28px, 5vw, 64px);
+  margin-top: 64px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.srvx-page .srvx-hero-stat__value {
+  font-family: var(--srvx-font-display);
+  font-weight: 700;
+  font-size: 1.8rem;
+  background: var(--srvx-grad-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.srvx-page .srvx-hero-stat__label {
+  font-family: var(--srvx-font-mono);
+  font-size: 0.72rem;
+  color: var(--srvx-ink-faint);
+  margin-top: 6px;
+}
+
+/* ===================================================================
+   INTRO STATEMENT
+   =================================================================== */
+
+.srvx-page .srvx-intro__inner {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.srvx-page .srvx-intro__kicker {
+  font-family: var(--srvx-font-mono);
+  color: var(--srvx-accent-amber);
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+
+.srvx-page .srvx-intro__text {
+  font-family: var(--srvx-font-display);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--srvx-ink);
+  margin: 0 0 28px;
+}
+
+.srvx-page .srvx-intro__body {
+  color: var(--srvx-ink-dim);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ===================================================================
+   SERVICES GRID
+   =================================================================== */
+
+.srvx-page .srvx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.srvx-page .srvx-feature {
+  position: relative;
+  padding: 32px 28px 28px;
+  border-radius: var(--srvx-radius-md);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--srvx-line);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform 0.5s var(--srvx-ease-premium), border-color 0.4s ease, box-shadow 0.5s ease;
+}
+
+.srvx-page .srvx-feature:hover {
+  transform: translateY(-6px);
+  border-color: var(--srvx-line-strong);
+  box-shadow: 0 24px 60px -20px rgba(99, 102, 241, 0.35);
+}
+
+.srvx-page .srvx-feature__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.srvx-page .srvx-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  font-family: var(--srvx-font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: var(--srvx-grad-primary);
+  color: #fff;
+}
+
+.srvx-page .srvx-tag {
+  font-family: var(--srvx-font-mono);
+  font-size: 0.72rem;
+  color: var(--srvx-ink-faint);
+}
+
+.srvx-page .srvx-feature__name {
+  font-family: var(--srvx-font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.srvx-page .srvx-feature__desc {
+  color: var(--srvx-ink-dim);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+.srvx-page .srvx-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.srvx-page .srvx-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--srvx-ink-dim);
+  line-height: 1.5;
+}
+
+.srvx-page .srvx-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--srvx-accent-amber);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* ===================================================================
+   PROCESS
+   =================================================================== */
+
+.srvx-page .srvx-process {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2px 1fr;
+  gap: 0 40px;
+  max-width: 760px;
+}
+
+.srvx-page .srvx-process__rail {
+  position: relative;
+  width: 2px;
+  background: var(--srvx-line);
+  border-radius: 2px;
+}
+
+.srvx-page .srvx-process__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(180deg, var(--srvx-accent-indigo), var(--srvx-accent-amber));
+  border-radius: 2px;
+}
+
+.srvx-page .srvx-process__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+}
+
+.srvx-page .srvx-step {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.srvx-page .srvx-step__num {
+  font-family: var(--srvx-font-mono);
+  font-size: 0.8rem;
+  color: var(--srvx-accent-amber);
+  min-width: 26px;
+}
+
+.srvx-page .srvx-step__dot {
+  position: absolute;
+  left: -61px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--srvx-bg-void);
+  border: 2px solid var(--srvx-accent-violet);
+}
+
+.srvx-page .srvx-step__body h3 {
+  font-family: var(--srvx-font-display);
+  font-size: 1.15rem;
+  margin: 0 0 8px;
+}
+
+.srvx-page .srvx-step__body p {
+  color: var(--srvx-ink-dim);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0;
+  max-width: 460px;
+}
+
+/* ===================================================================
+   PACKAGES / PRICING
+   =================================================================== */
+
+.srvx-page .srvx-packages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.srvx-page .srvx-package {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 30px;
+  border-radius: var(--srvx-radius-lg);
+  border: 1px solid var(--srvx-line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.01));
+  transition: transform 0.5s var(--srvx-ease-premium), border-color 0.4s ease, box-shadow 0.5s ease;
+}
+
+.srvx-page .srvx-package:hover {
+  transform: translateY(-6px);
+  border-color: var(--srvx-line-strong);
+}
+
+.srvx-page .srvx-package--featured {
+  border-color: var(--srvx-accent-violet);
+  box-shadow: 0 30px 80px -30px rgba(139, 92, 246, 0.5);
+}
+
+.srvx-page .srvx-package--featured::before {
+  content: "Most booked";
+  position: absolute;
+  top: -13px;
+  left: 30px;
+  font-family: var(--srvx-font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--srvx-grad-warm);
+  color: #06070c;
+  font-weight: 600;
+}
+
+.srvx-page .srvx-package__name {
+  font-family: var(--srvx-font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.srvx-page .srvx-package__desc {
+  color: var(--srvx-ink-dim);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.srvx-page .srvx-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.srvx-page .srvx-price__value {
+  font-family: var(--srvx-font-display);
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--srvx-ink);
+}
+
+.srvx-page .srvx-price__unit {
+  font-family: var(--srvx-font-mono);
+  font-size: 0.85rem;
+  color: var(--srvx-ink-faint);
+}
+
+.srvx-page .srvx-package .srvx-list {
+  margin-bottom: 30px;
+  flex: 1;
+}
+
+.srvx-page .srvx-package .srvx-button {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ===================================================================
+   FAQ
+   =================================================================== */
+
+.srvx-page .srvx-faq {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.srvx-page .srvx-details {
+  border: 1px solid var(--srvx-line);
+  border-radius: var(--srvx-radius-md);
+  background: rgba(255, 255, 255, 0.025);
+  padding: 22px 26px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.srvx-page .srvx-details[open] {
+  border-color: var(--srvx-line-strong);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.srvx-page .srvx-details summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: var(--srvx-font-display);
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: var(--srvx-ink);
+}
+
+.srvx-page .srvx-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.srvx-page .srvx-details__icon {
+  font-family: var(--srvx-font-mono);
+  color: var(--srvx-accent-amber);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.srvx-page .srvx-details[open] .srvx-details__icon {
+  transform: rotate(45deg);
+}
+
+.srvx-page .srvx-details__body {
+  color: var(--srvx-ink-dim);
+  font-size: 0.92rem;
+  line-height: 1.7;
+  margin: 16px 0 0;
+  max-width: 620px;
+}
+
+/* ===================================================================
+   CTA / BANNER
+   =================================================================== */
+
+.srvx-page .srvx-cta {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.srvx-page .srvx-banner {
+  position: absolute;
+  inset: 0;
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.35), transparent 70%);
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.srvx-page .srvx-cta > * {
+  position: relative;
+  z-index: 1;
+}
+
+.srvx-page .srvx-cta-title {
+  font-family: var(--srvx-font-display);
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+}
+
+.srvx-page .srvx-cta-sub {
+  color: var(--srvx-ink-dim);
+  font-size: 1.05rem;
+  max-width: 480px;
+  margin: 0 0 40px;
+  line-height: 1.7;
+}
+
+/* ===================================================================
+   RESPONSIVE
+   =================================================================== */
+
+@media (max-width: 900px) {
+  .srvx-page .srvx-step__dot {
+    left: -48px;
+  }
+}
+
+@media (max-width: 720px) {
+  .srvx-page .srvx-hero-title {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+
+  .srvx-page .srvx-process {
+    grid-template-columns: 2px 1fr;
+    gap: 0 24px;
+  }
+
+  .srvx-page .srvx-step__dot {
+    left: -32px;
+  }
+}
+
+@media (max-width: 520px) {
+  .srvx-page .srvx-section {
+    padding: 64px 18px;
+  }
+
+  .srvx-page .srvx-glow--a,
+  .srvx-page .srvx-glow--b {
+    width: 320px;
+    height: 320px;
+  }
+
+  .srvx-page .srvx-hero-stats {
+    gap: 28px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .srvx-page * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="srvx-page">
+
+  <!-- HERO -->
+  <section class="srvx-hero">
+    <div class="srvx-hero-grid"></div>
+    <div class="srvx-glow srvx-glow--a"></div>
+    <div class="srvx-glow srvx-glow--b"></div>
+    <div class="srvx-hero-content">
+      <span class="srvx-hero-eyebrow">/ SERVICES</span>
+      <h1 class="srvx-hero-title">
+        Engineering products,<br>
+        <span class="srvx-hero-title__accent">end to end.</span>
+      </h1>
+      <p class="srvx-hero-sub">
+        From first wireframe to production deploy — design, build, and ship software that holds up under real traffic and real users.
+      </p>
+      <div class="srvx-hero-actions">
+        <a href="#srvx-packages" class="srvx-button">Get a quote <span class="srvx-button__arrow">→</span></a>
+        <a href="#srvx-services-grid" class="srvx-button srvx-button--ghost">View services</a>
+      </div>
+    </div>
+    <div class="srvx-hero-stats">
+      <div>
+        <div class="srvx-hero-stat__value">60+</div>
+        <div class="srvx-hero-stat__label">PROJECTS SHIPPED</div>
+      </div>
+      <div>
+        <div class="srvx-hero-stat__value">98%</div>
+        <div class="srvx-hero-stat__label">CLIENT RETENTION</div>
+      </div>
+      <div>
+        <div class="srvx-hero-stat__value">4–8wk</div>
+        <div class="srvx-hero-stat__label">TYPICAL TURNAROUND</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="srvx-section">
+    <div class="srvx-container srvx-intro__inner">
+      <div class="srvx-intro__kicker">// WHAT I DO</div>
+      <p class="srvx-intro__text">
+        I partner with founders and teams to turn a rough idea or a strained legacy system into something fast, stable, and worth using.
+      </p>
+      <p class="srvx-intro__body">
+        Every engagement starts with the same question: what does this product need to be true, three months from now? The answer shapes the stack, the timeline, and the scope — not the other way around.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="srvx-section" id="srvx-services-grid">
+    <div class="srvx-container">
+      <div class="srvx-heading srvx-heading--center">
+        <span class="srvx-eyebrow">CAPABILITIES</span>
+        <h2 class="srvx-title">Where I can help</h2>
+        <p class="srvx-subtitle">Six services, one continuous workflow — pick an entry point or bring me in from day one.</p>
+      </div>
+
+      <div class="srvx-grid">
+
+        <div class="srvx-feature">
+          <div class="srvx-feature__top">
+            <div class="srvx-icon">WEB</div>
+            <span class="srvx-tag">01</span>
+          </div>
+          <h3 class="srvx-feature__name">Web App Development</h3>
+          <p class="srvx-feature__desc">Full-stack builds from prototype to production, built to scale with your user base rather than against it.</p>
+          <ul class="srvx-list">
+            <li>React, Next.js, and modern component architecture</li>
+            <li>Responsive, accessible interfaces</li>
+            <li>CI/CD pipelines and staged rollouts</li>
+          </ul>
+        </div>
+
+        <div class="srvx-feature">
+          <div class="srvx-feature__top">
+            <div class="srvx-icon">UX</div>
+            <span class="srvx-tag">02</span>
+          </div>
+          <h3 class="srvx-feature__name">UI/UX &amp; Design Systems</h3>
+          <p class="srvx-feature__desc">Interfaces designed around how people actually use the product, backed by a component library your team can extend.</p>
+          <ul class="srvx-list">
+            <li>Wireframes through high-fidelity prototypes</li>
+            <li>Reusable design tokens and components</li>
+            <li>Usability testing and iteration</li>
+          </ul>
+        </div>
+
+        <div class="srvx-feature">
+          <div class="srvx-feature__top">
+            <div class="srvx-icon">API</div>
+            <span class="srvx-tag">03</span>
+          </div>
+          <h3 class="srvx-feature__name">Backend &amp; API Engineering</h3>
+          <p class="srvx-feature__desc">Services and APIs built for correctness first, then tuned for throughput as real load arrives.</p>
+          <ul class="srvx-list">
+            <li>REST and GraphQL API design</li>
+            <li>Authentication, billing, and third-party integrations</li>
+            <li>Queueing, background jobs, and event pipelines</li>
+          </ul>
+        </div>
+
+        <div class="srvx-feature">
+          <div class="srvx-feature__top">
+            <div class="srvx-icon">DB</div>
+            <span class="srvx-tag">04</span>
+          </div>
+          <h3 class="srvx-feature__name">Database Architecture</h3>
+          <p class="srvx-feature__desc">Schemas and query patterns that stay fast as the data grows, not just at demo scale.</p>
+          <ul class="srvx-list">
+            <li>Schema design and normalization review</li>
+            <li>Migration planning with zero-downtime cutovers</li>
+            <li>Indexing and query performance tuning</li>
+          </ul>
+        </div>
+
+        <div class="srvx-feature">
+          <div class="srvx-feature__top">
+            <div class="srvx-icon">OPT</div>
+            <span class="srvx-tag">05</span>
+          </div>
+          <h3 class="srvx-feature__name">Performance &amp; Optimization</h3>
+          <p class="srvx-feature__desc">Audits that find where time and money are actually going, then fixes that move the numbers you track.</p>
+          <ul class="srvx-list">
+            <li>Load time and Core Web Vitals audits</li>
+            <li>Infrastructure and cost review</li>
+            <li>Caching and rendering strategy</li>
+          </ul>
+        </div>
+
+        <div class="srvx-feature">
+          <div class="srvx-feature__top">
+            <div class="srvx-icon">SUP</div>
+            <span class="srvx-tag">06</span>
+          </div>
+          <h3 class="srvx-feature__name">Ongoing Support</h3>
+          <p class="srvx-feature__desc">A steady hand after launch — monitoring, fixes, and small features without a full re-engagement each time.</p>
+          <ul class="srvx-list">
+            <li>Monthly retainers with defined response times</li>
+            <li>Monitoring, alerting, and incident response</li>
+            <li>Roadmap planning for the next release</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="srvx-section">
+    <div class="srvx-container">
+      <div class="srvx-heading">
+        <span class="srvx-eyebrow">HOW IT RUNS</span>
+        <h2 class="srvx-title">The process</h2>
+        <p class="srvx-subtitle">A fixed sequence, because skipping a stage is where most project risk hides.</p>
+      </div>
+
+      <div class="srvx-process">
+        <div class="srvx-process__rail">
+          <div class="srvx-process__fill"></div>
+        </div>
+        <div class="srvx-process__steps">
+
+          <div class="srvx-step">
+            <span class="srvx-step__dot"></span>
+            <span class="srvx-step__num">01</span>
+            <div class="srvx-step__body">
+              <h3>Discovery</h3>
+              <p>A working session to pin down the actual problem, the constraints, and what "done" looks like before any code is written.</p>
+            </div>
+          </div>
+
+          <div class="srvx-step">
+            <span class="srvx-step__dot"></span>
+            <span class="srvx-step__num">02</span>
+            <div class="srvx-step__body">
+              <h3>Design</h3>
+              <p>Wireframes and a technical plan get reviewed together, so the interface and the architecture agree before build starts.</p>
+            </div>
+          </div>
+
+          <div class="srvx-step">
+            <span class="srvx-step__dot"></span>
+            <span class="srvx-step__num">03</span>
+            <div class="srvx-step__body">
+              <h3>Build</h3>
+              <p>Development in weekly increments with a running staging link, so you're watching the product take shape, not waiting on a reveal.</p>
+            </div>
+          </div>
+
+          <div class="srvx-step">
+            <span class="srvx-step__dot"></span>
+            <span class="srvx-step__num">04</span>
+            <div class="srvx-step__body">
+              <h3>Test &amp; Harden</h3>
+              <p>Cross-browser checks, load testing, and a security pass before anything reaches real users.</p>
+            </div>
+          </div>
+
+          <div class="srvx-step">
+            <span class="srvx-step__dot"></span>
+            <span class="srvx-step__num">05</span>
+            <div class="srvx-step__body">
+              <h3>Launch &amp; Support</h3>
+              <p>A staged rollout with monitoring in place, followed by a support window to catch anything the launch surfaces.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="srvx-section" id="srvx-packages">
+    <div class="srvx-container">
+      <div class="srvx-heading srvx-heading--center">
+        <span class="srvx-eyebrow">ENGAGEMENT</span>
+        <h2 class="srvx-title">Packages &amp; pricing</h2>
+        <p class="srvx-subtitle">Fixed scope for defined projects, or a retainer if the work is ongoing. Custom quotes for anything larger.</p>
+      </div>
+
+      <div class="srvx-packages">
+
+        <div class="srvx-package">
+          <span class="srvx-package__name">Starter</span>
+          <p class="srvx-package__desc">A focused build for a single product surface or MVP.</p>
+          <div class="srvx-price">
+            <span class="srvx-price__value">$3.5k</span>
+            <span class="srvx-price__unit">/ project</span>
+          </div>
+          <ul class="srvx-list">
+            <li>One core feature or a lean MVP</li>
+            <li>Up to 4 weeks of build time</li>
+            <li>Responsive front end included</li>
+            <li>2 weeks of post-launch support</li>
+          </ul>
+          <a href="#" class="srvx-button srvx-button--ghost">Start here</a>
+        </div>
+
+        <div class="srvx-package srvx-package--featured">
+          <span class="srvx-package__name">Growth</span>
+          <p class="srvx-package__desc">Full-stack build for a product ready to take on real users.</p>
+          <div class="srvx-price">
+            <span class="srvx-price__value">$9k</span>
+            <span class="srvx-price__unit">/ project</span>
+          </div>
+          <ul class="srvx-list">
+            <li>Full-stack build, front end to database</li>
+            <li>Up to 8 weeks of build time</li>
+            <li>API integrations included</li>
+            <li>6 weeks of post-launch support</li>
+            <li>Weekly progress reviews</li>
+          </ul>
+          <a href="#" class="srvx-button">Choose Growth</a>
+        </div>
+
+        <div class="srvx-package">
+          <span class="srvx-package__name">Partner</span>
+          <p class="srvx-package__desc">A monthly retainer for teams that need continuous engineering.</p>
+          <div class="srvx-price">
+            <span class="srvx-price__value">$2.4k</span>
+            <span class="srvx-price__unit">/ month</span>
+          </div>
+          <ul class="srvx-list">
+            <li>Dedicated hours each month, rolled over if unused</li>
+            <li>Priority response on issues</li>
+            <li>Monthly roadmap planning session</li>
+            <li>Cancel or pause anytime</li>
+          </ul>
+          <a href="#" class="srvx-button srvx-button--ghost">Talk it through</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="srvx-section">
+    <div class="srvx-container">
+      <div class="srvx-heading">
+        <span class="srvx-eyebrow">QUESTIONS</span>
+        <h2 class="srvx-title">Before you reach out</h2>
+        <p class="srvx-subtitle">The things clients usually ask on the first call.</p>
+      </div>
+
+      <div class="srvx-faq">
+
+        <details class="srvx-details" open>
+          <summary>How long does a typical project take?
+            <span class="srvx-details__icon">+</span>
+          </summary>
+          <p class="srvx-details__body">Most single-feature builds land in 3–4 weeks; full-stack projects usually run 6–8 weeks. You'll get a firm estimate after the discovery call, once scope is locked.</p>
+        </details>
+
+        <details class="srvx-details">
+          <summary>Do you work with an existing codebase, or only new builds?
+            <span class="srvx-details__icon">+</span>
+          </summary>
+          <p class="srvx-details__body">Both. A good chunk of the work is stepping into an existing system — the discovery phase includes a codebase review before any estimate is given.</p>
+        </details>
+
+        <details class="srvx-details">
+          <summary>What do you need from me to get started?
+            <span class="srvx-details__icon">+</span>
+          </summary>
+          <p class="srvx-details__body">A clear statement of the problem, access to any existing repos or design files, and one point of contact for decisions during the build.</p>
+        </details>
+
+        <details class="srvx-details">
+          <summary>What happens after launch?
+            <span class="srvx-details__icon">+</span>
+          </summary>
+          <p class="srvx-details__body">Every project package includes a fixed support window. After that, most clients move to a Partner retainer, but there's no obligation to continue.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="srvx-cta">
+    <div class="srvx-banner"></div>
+    <h2 class="srvx-cta-title">Have a project in mind?</h2>
+    <p class="srvx-cta-sub">Tell me what you're building and where it's stuck. I'll reply with next steps within a day.</p>
+    <a href="#" class="srvx-button">Start a project <span class="srvx-button__arrow">→</span></a>
+  </section>
+
+</div>
+
+</body>
+</html>

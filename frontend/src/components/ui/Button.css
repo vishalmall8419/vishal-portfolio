@@ -1,0 +1,192 @@
+.vm-btn {
+  --btn-bg: linear-gradient(135deg, #6c63ff 0%, #00e5ff 100%);
+  --btn-text: #ffffff;
+
+  position: relative;
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  border-radius: 18px;
+
+  padding: 14px 32px;
+
+  cursor: pointer;
+
+  color: var(--btn-text);
+
+  background: transparent;
+
+  transition: .35s ease;
+
+  backdrop-filter: blur(18px);
+
+  isolation: isolate;
+}
+
+.vm-btn::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,.04);
+    z-index:-2;
+}
+
+.vm-btn-bg{
+    position:absolute;
+    inset:0;
+    background:var(--btn-bg);
+    opacity:.95;
+    z-index:-1;
+    transition:.4s;
+}
+
+.vm-btn-content{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:600;
+    letter-spacing:.3px;
+}
+
+.vm-btn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 20px 40px rgba(108,99,255,.35),
+    0 0 50px rgba(0,229,255,.15);
+
+}
+
+.vm-btn:hover .vm-btn-bg{
+
+    transform:scale(1.08);
+
+}
+
+.vm-btn:active{
+
+    transform:scale(.97);
+
+}
+
+.vm-btn-loader{
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,255,255,.3);
+
+    border-top-color: var(--text-on-accent);
+
+    animation:spin .8s linear infinite;
+
+}
+
+.vm-btn-icon{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:18px;
+
+}
+
+.vm-btn-full{
+
+    width:100%;
+
+}
+
+.vm-btn-sm{
+
+    padding:10px 22px;
+
+    font-size:.9rem;
+
+}
+
+.vm-btn-md{
+
+    padding:14px 32px;
+
+    font-size:1rem;
+
+}
+
+.vm-btn-lg{
+
+    padding:18px 42px;
+
+    font-size:1.05rem;
+
+}
+
+.vm-btn-primary .vm-btn-bg{
+
+    background:linear-gradient(
+    135deg,
+    #6C63FF,
+    #00E5FF);
+
+}
+
+.vm-btn-secondary .vm-btn-bg{
+
+    background:linear-gradient(
+    135deg,
+    #7C3AED,
+    #6C63FF);
+
+}
+
+.vm-btn-outline{
+
+    border:1px solid rgba(255,255,255,.2);
+
+}
+
+[data-theme="light"] .vm-btn-outline {
+    border: 1px solid var(--primary);
+}
+
+.vm-btn-outline .vm-btn-bg{
+
+    opacity:0;
+
+}
+
+.vm-btn-outline:hover .vm-btn-bg{
+
+    opacity:1;
+
+}
+
+.vm-btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}

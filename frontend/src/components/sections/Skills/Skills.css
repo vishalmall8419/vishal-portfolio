@@ -1,0 +1,81 @@
+.vm-skills {
+  position: relative;
+  padding: 140px 8%;
+}
+
+.vm-skills-container {
+  max-width: 1400px;
+  margin: auto;
+}
+
+.vm-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.vm-skill-card {
+  min-height: 280px;
+  transition: all .4s ease;
+}
+
+.vm-skill-card:hover {
+  transform: translateY(-10px);
+}
+
+.vm-skill-card h3 {
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 30px;
+}
+
+.vm-skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.vm-skill-chip {
+  padding: 12px 20px;
+
+  border-radius: 999px;
+
+  background: var(--glass-bg);
+
+  border: 1px solid var(--glass-border);
+
+  color: var(--text-light);
+
+  transition: .35s ease;
+
+  cursor: pointer;
+}
+
+.vm-skill-chip:hover {
+
+  color: var(--text-on-accent);
+
+  transform: translateY(-4px);
+
+  background: linear-gradient(
+    135deg,
+    rgba(108,99,255,.25),
+    rgba(0,229,255,.25)
+  );
+
+  border-color: rgba(255,255,255,.18);
+
+  box-shadow:
+    0 10px 25px rgba(108,99,255,.20);
+
+}
+
+@media (max-width:992px){
+
+  .vm-skills-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+}

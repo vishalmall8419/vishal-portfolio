@@ -1,0 +1,31 @@
+body {
+  cursor: none;
+}
+
+.vm-cursor {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  width: 22px;
+  height: 22px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 999999;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(circle, #6c63ff, #00e5ff);
+
+  box-shadow:
+    0 0 25px rgba(108, 99, 255, 0.6),
+    0 0 60px rgba(0, 229, 255, 0.35);
+
+  will-change: transform;
+
+  mix-blend-mode: screen;
+}

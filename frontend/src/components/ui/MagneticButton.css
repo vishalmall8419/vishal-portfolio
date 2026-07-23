@@ -1,0 +1,88 @@
+.vm-magnetic-btn{
+
+    position:relative;
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:18px 40px;
+
+    border-radius:999px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    background:
+    linear-gradient(
+    135deg,
+    #6C63FF,
+    #00E5FF);
+
+    color: var(--text-on-accent);
+
+    font-weight:700;
+
+    transition:
+    transform .18s ease,
+    box-shadow .35s ease;
+
+    box-shadow:
+    0 15px 45px rgba(108,99,255,.30);
+
+}
+
+.vm-magnetic-btn:hover{
+
+    box-shadow:
+
+    0 20px 55px rgba(108,99,255,.45),
+
+    0 0 40px rgba(0,229,255,.20);
+
+}
+
+.vm-magnetic-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.25),
+
+    transparent
+
+    );
+
+    transform:translateX(-150%);
+
+    transition:.8s;
+
+}
+
+.vm-magnetic-btn:hover::before{
+
+    transform:translateX(150%);
+
+}
+
+.vm-magnetic-btn span{
+
+    position:relative;
+
+    z-index:2;
+
+}

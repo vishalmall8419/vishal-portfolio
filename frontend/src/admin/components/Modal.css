@@ -1,0 +1,104 @@
+.admx-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 8, 22, 0.68);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2147483000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 20px;
+  overflow-y: auto;
+  animation: admx-fade-in 0.25s ease;
+}
+
+@keyframes admx-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.admx-modal {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  border-radius: var(--radius-md);
+  animation: admx-modal-in 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.admx-modal::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent), var(--admx-cyan));
+}
+
+.admx-modal-sm { max-width: 420px; }
+.admx-modal-md { max-width: 560px; }
+.admx-modal-lg { max-width: 760px; }
+.admx-modal-xl { max-width: 960px; }
+
+@keyframes admx-modal-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.admx-modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.admx-modal-head h3 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.admx-modal-body {
+  padding: 24px 26px;
+  overflow-y: auto;
+}
+
+.admx-modal-foot {
+  padding: 18px 26px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .admx-modal-backdrop { padding: 20px 12px; }
+  .admx-modal-body { padding: 18px; }
+  .admx-modal-head { padding: 16px 18px; }
+  .admx-modal-foot { padding: 14px 18px; }
+}
+
+@media (max-width: 576px) {
+  .admx-modal { max-width: 100%; }
+}
+
+@media (max-width: 425px) {
+  .admx-modal-backdrop { padding: 12px 8px; }
+  .admx-modal-foot { flex-direction: column-reverse; }
+  .admx-modal-foot .admx-btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 375px) {
+  .admx-modal-body { padding: 14px; }
+}
+
+@media (max-width: 320px) {
+  .admx-modal-head h3 { font-size: 1rem; }
+}

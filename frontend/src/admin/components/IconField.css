@@ -1,0 +1,52 @@
+.admx-icon-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.admx-icon-tab {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.25s ease, color 0.25s ease, background 0.25s ease;
+}
+
+.admx-icon-tab:hover {
+  color: var(--text);
+  border-color: var(--primary);
+}
+
+.admx-icon-tab.is-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--text-on-accent);
+}
+
+.admx-icon-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.03);
+  min-height: 44px;
+}
+
+.admx-icon-preview-img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.admx-icon-preview-empty {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}

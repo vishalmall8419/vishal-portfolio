@@ -1,0 +1,82 @@
+.vm-stats-section{
+    max-width:1400px;
+    margin:120px auto;
+    padding:0 8%;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:30px;
+}
+
+.vm-counter{
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    border-radius:24px;
+
+    background: var(--glass-bg);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(20px);
+
+    transition:.35s;
+
+}
+
+.vm-counter:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 20px 40px rgba(108,99,255,.25);
+
+}
+
+.vm-counter h2{
+
+    font-size:3.5rem;
+
+    margin-bottom:10px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #6C63FF,
+    #00E5FF);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.vm-counter span{
+
+    color: var(--text-light);
+
+    font-size:1rem;
+
+}
+
+@media(max-width:992px){
+
+.vm-stats-section{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.vm-stats-section{
+
+grid-template-columns:1fr;
+
+}
+
+}

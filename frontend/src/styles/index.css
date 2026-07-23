@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+
+@import "./variables.css";
+@import "./reset.css";
+@import "./typography.css";
+@import "./utilities.css";
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow-x:hidden;
+}
+
+
+#root {
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(108, 99, 255, 0.18), transparent 35%),
+    radial-gradient(circle at 80% 10%, rgba(0, 229, 255, 0.12), transparent 35%),
+    radial-gradient(circle at 50% 80%, rgba(124, 58, 237, 0.15), transparent 40%);
+}
+body.loading {
+  overflow: hidden;
+}

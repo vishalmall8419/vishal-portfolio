@@ -1,0 +1,451 @@
+.resume-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.resume-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+.resume-hero {
+  padding: 160px 0 30px;
+}
+
+.resume-loading {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.resume-download-link {
+  text-decoration: none;
+}
+
+.resume-sheet-wrap {
+  padding: 20px 0 100px;
+}
+
+.resume-sheet {
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%),
+    var(--surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-lg);
+  padding: 48px;
+}
+
+.resume-header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.resume-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.resume-header-text h1 {
+  font-size: 2rem;
+  margin: 0 0 4px;
+  color: var(--text);
+}
+
+.resume-role {
+  color: var(--primary-light);
+  font-weight: 600;
+  margin: 0 0 14px;
+}
+
+.resume-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+.resume-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.92rem;
+  color: var(--text-light);
+}
+
+.resume-social-row {
+  display: flex;
+  gap: 12px;
+}
+
+.resume-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: var(--transition);
+}
+
+.resume-social-link:hover {
+  color: var(--primary-light);
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.resume-section {
+  margin-bottom: 34px;
+}
+
+.resume-section-title {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary-light);
+  margin: 0 0 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.resume-summary {
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.resume-columns {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 40px;
+}
+
+.resume-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.resume-timeline-item {
+  display: flex;
+  gap: 14px;
+}
+
+.resume-timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.resume-item-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.resume-item-head h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--text);
+}
+
+.resume-item-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.resume-item-sub {
+  color: var(--secondary);
+  font-size: 0.9rem;
+  margin: 2px 0 6px;
+}
+
+.resume-item-desc {
+  color: var(--text-light);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.resume-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.resume-project-item {
+  padding: 16px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.resume-project-item h3 {
+  font-size: 0.98rem;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+
+.resume-project-item p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin: 0 0 8px;
+}
+
+.resume-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.resume-tag {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-light);
+}
+
+.resume-skill-group {
+  margin-bottom: 18px;
+}
+
+.resume-skill-group h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.resume-skill-row {
+  margin-bottom: 10px;
+}
+
+.resume-skill-name {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.resume-skill-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.resume-skill-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.resume-simple-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resume-simple-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.88rem;
+}
+
+.resume-simple-list strong {
+  color: var(--text);
+}
+
+.resume-simple-list span {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .resume-columns {
+    grid-template-columns: 1fr;
+  }
+  .resume-project-grid {
+    grid-template-columns: 1fr;
+  }
+  .resume-sheet {
+    padding: 28px;
+  }
+  .resume-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .resume-contact-row,
+  .resume-social-row {
+    justify-content: center;
+  }
+}
+
+/* Print Styles
+   Only the resume sheet itself prints — navbar, footer, buttons and page
+   chrome are stripped so "Print Resume" produces a clean document (and
+   "Save as PDF" from the browser print dialog works as the PDF fallback
+   whenever no admin-uploaded resume file exists yet). */
+@media print {
+  .no-print,
+  .vm-navbar,
+  .vm-fab-root,
+  .vm-cursor,
+  .vm-mouse-glow,
+  .vm-loader,
+  nav,
+  header,
+  footer {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    overflow: visible !important;
+    cursor: auto !important;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .resume-page {
+    background: #ffffff;
+    color: #111111;
+    min-height: 0;
+  }
+
+  .resume-hero {
+    padding: 0;
+  }
+
+  .resume-sheet-wrap {
+    padding: 0;
+  }
+
+  .resume-container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .resume-sheet {
+    background: #ffffff;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    backdrop-filter: none;
+    filter: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .resume-section-title {
+    color: #222222;
+    border-bottom-color: #dddddd;
+  }
+
+  .resume-role,
+  .resume-item-sub {
+    color: #333333;
+  }
+
+  .resume-summary,
+  .resume-item-desc,
+  .resume-contact-item,
+  .resume-skill-name {
+    color: #333333;
+  }
+
+  .resume-timeline-dot {
+    background: #333333;
+  }
+
+  .resume-skill-bar-fill {
+    background: #555555;
+  }
+
+  .resume-tag,
+  .resume-project-item {
+    background: #f4f4f4;
+    border-color: #e0e0e0;
+    color: #333333;
+  }
+
+  .resume-skill-bar {
+    background: #eaeaea;
+    border: none;
+  }
+
+  /* A4 page setup + sane page breaks so sections/timeline items and
+     project/skill cards never get cut in half across a page boundary. */
+  @page {
+    size: A4;
+    margin: 14mm 12mm;
+  }
+
+  .resume-section,
+  .resume-timeline-item,
+  .resume-project-item,
+  .resume-skill-group,
+  .resume-header {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .resume-section-title {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .resume-columns {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  img {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

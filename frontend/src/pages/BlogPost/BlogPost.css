@@ -1,0 +1,123 @@
+.blogpost-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.blogpost-state {
+  padding: 200px 24px 100px;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.blogpost-article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 160px 24px 100px;
+}
+
+.blogpost-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+}
+
+.blogpost-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.blogpost-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.25;
+  margin: 0 0 20px;
+}
+
+.blogpost-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 32px;
+}
+
+.blogpost-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blogpost-cover {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.blogpost-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.blogpost-content {
+  color: var(--text-light);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.blogpost-content p {
+  margin: 0 0 20px;
+}
+
+.blogpost-content h2,
+.blogpost-content h3 {
+  color: var(--text);
+  margin: 32px 0 16px;
+}
+
+.blogpost-content img {
+  max-width: 100%;
+  border-radius: var(--radius-md);
+  margin: 24px 0;
+}
+
+.blogpost-content pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  overflow-x: auto;
+}
+
+.blogpost-content a {
+  color: var(--primary);
+}
+
+.blogpost-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.blogpost-tag-chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}

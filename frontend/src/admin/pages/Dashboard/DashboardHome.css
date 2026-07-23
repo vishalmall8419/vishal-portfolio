@@ -1,0 +1,125 @@
+.admx-quick-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.admx-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.admx-dashboard-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.admx-activity-card {
+  padding: 22px;
+  border-radius: var(--radius-md);
+}
+  
+.admx-activity-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.admx-activity-head h3 {
+  font-size: 1rem;
+  margin: 0;
+  font-family: var(--font-heading);
+}
+
+.admx-link-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  color: var(--primary-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.admx-link-btn:hover {
+  color: var(--secondary);
+}
+
+.admx-activity-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s var(--admx-ease);
+}
+.admx-activity-row:hover {
+  background: rgba(108, 99, 255, 0.08);
+  transform: translateX(3px);
+}
+.admx-activity-row:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.admx-activity-avatar {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--admx-grad-brand);
+  color: var(--text-on-accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 16px rgba(108, 99, 255, 0.3);
+}
+
+.admx-activity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+.admx-activity-info strong {
+  font-size: 0.88rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.admx-activity-info span {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 992px) {
+  .admx-dashboard-columns { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .admx-stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .admx-stat-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .admx-dashboard-columns { grid-template-columns: 1fr; }
+  .admx-quick-actions { width: 100%; }
+  .admx-quick-actions .admx-btn { flex: 1; }
+}
+
+@media (max-width: 425px) {
+  .admx-stat-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 320px) {
+  .admx-quick-actions { flex-direction: column; }
+}

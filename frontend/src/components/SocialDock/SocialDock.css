@@ -1,0 +1,70 @@
+.vm-social-dock{
+
+    position:fixed;
+
+    left:30px;
+
+    bottom:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    z-index:9999;
+
+}
+
+.vm-social-dock a{
+
+    width:56px;
+
+    height:56px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background: var(--glass-bg);
+
+    border: 1px solid var(--glass-border);
+
+    backdrop-filter:blur(20px);
+
+    color: var(--text);
+
+    font-size:22px;
+
+    transition:.35s;
+
+}
+
+.vm-social-dock a:hover{
+
+    transform:translateY(-8px);
+
+    background:linear-gradient(
+        135deg,
+        #6C63FF,
+        #00E5FF
+    );
+
+    box-shadow:
+    0 15px 35px rgba(108,99,255,.35);
+
+}
+
+@media(max-width:768px){
+
+    .vm-social-dock{
+
+        display:none;
+
+    }
+
+}

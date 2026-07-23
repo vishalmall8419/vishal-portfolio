@@ -1,0 +1,151 @@
+.admx-login-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.admx-login-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+}
+
+.admx-login-card {
+  padding: 44px 38px;
+  border-radius: var(--radius-lg);
+}
+
+.admx-login-brand {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.admx-login-mark {
+  width: 56px;
+  height: 56px;
+  font-size: 1.4rem;
+  border-radius: 18px;
+  margin: 0 auto 18px;
+}
+
+.admx-login-brand h1 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin: 0 0 8px;
+}
+
+.admx-login-brand p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.admx-input-icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.admx-input-icon-wrap svg:first-child {
+  position: absolute;
+  left: 16px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  pointer-events: none;
+}
+.admx-input-icon-wrap .admx-input {
+  padding-left: 46px;
+  padding-right: 46px;
+}
+.admx-input-eye {
+  position: absolute;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 1.05rem;
+}
+.admx-input-eye:hover {
+  color: var(--text);
+}
+
+.admx-login-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.admx-login-error {
+  text-align: center;
+  background: rgba(255, 76, 96, 0.1);
+  border: 1px solid rgba(255, 76, 96, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  margin-bottom: 18px;
+}
+
+.admx-login-submit {
+  width: 100%;
+  padding: 14px;
+}
+
+.admx-otp-mark {
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+}
+
+.admx-otp-input {
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 10px;
+  font-weight: 700;
+  padding-left: 16px;
+}
+
+.admx-otp-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: -6px 0 18px;
+}
+
+.admx-otp-expired {
+  color: #ff4c60;
+}
+
+.admx-otp-resend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+}
+.admx-otp-resend:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admx-otp-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  margin-top: 14px;
+  font-size: 0.85rem;
+}
+
+.admx-spin {
+  animation: admx-spin-anim 0.9s linear infinite;
+}
+@keyframes admx-spin-anim {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
