@@ -59,10 +59,17 @@ const otpEmailHtml = (otp) => `
 const issueOtp = async (admin) => {
   await AdminOtp.update(
     { consumed: true },
-    { where: { adminId: admin.id, purpose: OTP_PURPOSE, consumed: false } }
+    {
+      where: {
+        adminId: admin.id,
+        purpose: OTP_PURPOSE,
+        consumed: false,
+      },
+    }
   );
 
   const otp = generateOtp();
+
   await AdminOtp.create({
     adminId: admin.id,
     purpose: OTP_PURPOSE,
@@ -71,13 +78,26 @@ const issueOtp = async (admin) => {
     lastSentAt: new Date(),
   });
 
-  await sendMail({
-    to: admin.email,
-    subject: "Your admin login verification code",
-    html: otpEmailHtml(otp),
-    text: `Your admin login code is ${otp}. It expires in ${OTP_EXPIRES_MIN} minutes.`,
-    category: "admin_otp",
-  });
+  try {
+    await sendMail({
+      to: admin.email,
+      subject: "Your admin login verification code",
+      html: otpEmailHtml(otp),
+      text: `Your admin login code is ${otp}. It expires in ${OTP_EXPIRES_MIN} minutes.`,
+      category: "admin_otp",
+    });
+
+    console.log("OTP Email Sent");
+  } catch (err) {
+    console.error("========== SMTP ERROR ==========");
+    console.error(err);
+    console.error("================================");
+
+    throw new ApiError(
+      500,
+      err.message || "Failed to send OTP email."
+    );
+  }
 };
 
 const sanitize = (admin) => ({
