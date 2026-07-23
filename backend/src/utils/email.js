@@ -1,8 +1,6 @@
 const nodemailer = require("nodemailer");
-const dns = require("dns");
 
-// Single shared transporter, created lazily so a missing SMTP config doesn't
-// crash the app at boot.
+// Single shared transporter
 let transporter = null;
 
 const isConfigured = () => !!process.env.SMTP_HOST;
@@ -15,9 +13,6 @@ const getTransporter = () => {
     port: parseInt(process.env.SMTP_PORT, 10) || 587,
     secure: process.env.SMTP_SECURE === "true",
 
-    // Force IPv4 to avoid ENETUNREACH IPv6 errors
-    family: 4,
-
     auth: process.env.SMTP_USER
       ? {
           user: process.env.SMTP_USER,
@@ -25,14 +20,12 @@ const getTransporter = () => {
         }
       : undefined,
 
+    connectionTimeout: 30000,
+    greetingTimeout: 30000,
+    socketTimeout: 30000,
+
     tls: {
       rejectUnauthorized: false,
-    },
-
-    requireTLS: true,
-
-    dnsLookup: (hostname, options, callback) => {
-      dns.lookup(hostname, { family: 4 }, callback);
     },
   });
 
@@ -104,6 +97,8 @@ const sendMail = async ({ to, subject, html, text, category }) => {
         text,
       });
 
+      console.log("[email] Email sent successfully.");
+
       await logAttempt({
         to,
         subject,
@@ -135,6 +130,10 @@ const sendMail = async ({ to, subject, html, text, category }) => {
     attempts: MAX_ATTEMPTS,
     error: lastError.message,
   });
+
+  console.error("========== SMTP ERROR ==========");
+  console.error(lastError);
+  console.error("================================");
 
   throw lastError;
 };
