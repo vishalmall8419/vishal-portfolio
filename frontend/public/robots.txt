@@ -1,8 +1,19 @@
-# Replace https://your-domain.com below with the actual production domain
-# once deployed — search engines expect an absolute URL here.
+# robots.txt
+# Website: https://vishalmall.vercel.app
+# Portfolio of Vishal Mall
+
 User-agent: *
+
+# Allow crawling of all public pages
 Allow: /
+
+# Block admin panel
 Disallow: /admin
 Disallow: /admin/
 
-Sitemap: https://your-domain.com/sitemap.xml
+# Block admin API endpoints (if they are exposed on this domain)
+Disallow: /api/admin/
+Disallow: /api/auth/
+
+# Sitemap
+Sitemap: https://vishalmall.vercel.app/sitemap.xml

@@ -24,8 +24,6 @@ const NavStructure = [
     items: [
       { id: "skills", title: "Skills", path: "/skills", description: "Tech stack & proficiency" },
       { id: "projects", title: "Projects", path: "/projects", description: "Featured case studies" },
-      { id: "case-studies", title: "Case Studies", path: "/projects", description: "In-depth project breakdowns" },
-      { id: "journey", title: "Journey", path: "/about", description: "Experience & education timeline" },
       { id: "gallery", title: "Gallery", path: "/gallery", description: "Moments & behind the scenes" },
       { id: "blog", title: "Blog", path: "/blog", description: "Writing & notes" },
     ],
@@ -41,7 +39,7 @@ const NavStructure = [
       { id: "achievements", title: "Achievements", path: "/achievements", description: "Awards & milestones" },
       { id: "open-source", title: "Open Source", path: "/open-source", description: "Public contributions" },
       { id: "contact", title: "Contact", path: "/contact", description: "Get in touch" },
-      { id: "ai", title: "VP-ChatBot", path: "/ai", description: "Ask about this portfolio" },
+      { id: "ai", title: "ChatBot", path: "/ai", description: "Ask about this portfolio" },
     ],
   },
 ];
