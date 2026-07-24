@@ -7,6 +7,17 @@ let transporter = null;
 
 const isConfigured = () => !!process.env.SMTP_HOST;
 
+// Without explicit timeouts, nodemailer/Node's socket has no bound at all —
+// if the SMTP host is unreachable, the port is filtered by the network, or
+// the TLS/greeting handshake stalls, the connection hangs indefinitely
+// instead of failing. That hang was propagating all the way up through
+// sendMail() -> issueOtp() -> the /auth/login request, which is why the
+// login endpoint could hang forever with no error. These bound every phase
+// of the SMTP handshake so a bad connection fails in ~10s instead of never.
+const SMTP_CONNECTION_TIMEOUT_MS = 10_000; // time to establish the TCP connection
+const SMTP_GREETING_TIMEOUT_MS = 10_000; // time to wait for the SMTP greeting after connecting
+const SMTP_SOCKET_TIMEOUT_MS = 15_000; // inactivity timeout once the connection is open
+
 const getTransporter = () => {
   if (transporter) return transporter;
   transporter = nodemailer.createTransport({
@@ -16,6 +27,9 @@ const getTransporter = () => {
     auth: process.env.SMTP_USER
       ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
       : undefined,
+    connectionTimeout: SMTP_CONNECTION_TIMEOUT_MS,
+    greetingTimeout: SMTP_GREETING_TIMEOUT_MS,
+    socketTimeout: SMTP_SOCKET_TIMEOUT_MS,
   });
   return transporter;
 };

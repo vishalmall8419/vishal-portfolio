@@ -75,12 +75,23 @@ const issueOtp = async (admin) => {
     lastSentAt: new Date(),
   });
 
-  await sendMail({
+  // Intentionally NOT awaited: the OTP is already generated and persisted
+  // above, which is all /auth/login needs to respond successfully. Awaiting
+  // the SMTP send here would tie the HTTP response to an external network
+  // call — if Brevo (or the network path to it) is slow or unreachable, the
+  // whole login request would hang until the platform/browser force-closes
+  // it. sendMail() already retries internally and writes every attempt
+  // (sent/failed/skipped) to EmailLog, so failures are still fully visible,
+  // they just no longer block the response.
+  sendMail({
     to: admin.email,
     subject: "Your admin login verification code",
     html: otpEmailHtml(otp),
     text: `Your admin login code is ${otp}. It expires in ${OTP_EXPIRES_MIN} minutes.`,
     category: "admin_otp",
+  }).catch((err) => {
+    // eslint-disable-next-line no-console
+    console.error(`[auth] Failed to email OTP to ${admin.email}:`, err.message);
   });
 };
 

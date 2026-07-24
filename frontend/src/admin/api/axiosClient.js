@@ -8,6 +8,11 @@ export const FILE_BASE_URL =
 const api = axios.create({
   baseURL: API_BASE_URL,
   withCredentials: true, // send the httpOnly refreshToken cookie
+  // Without this, a stalled backend request (e.g. one blocked on a slow
+  // external call) leaves the UI waiting forever with no error and no way
+  // for a submit button's `finally` block to ever run. 20s is generous for
+  // any of this app's endpoints under normal conditions.
+  timeout: 20_000,
 });
 
 const TOKEN_KEY = "admx_token";
