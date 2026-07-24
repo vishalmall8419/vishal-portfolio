@@ -30,6 +30,14 @@ const getTransporter = () => {
     connectionTimeout: SMTP_CONNECTION_TIMEOUT_MS,
     greetingTimeout: SMTP_GREETING_TIMEOUT_MS,
     socketTimeout: SMTP_SOCKET_TIMEOUT_MS,
+    // Force IPv4. Node's DNS resolver may hand nodemailer an IPv6 address
+    // for smtp-relay.brevo.com, and unlike a browser, nodemailer does not
+    // retry on the other address family if that connection stalls — it
+    // just times out. Pinning the family rules this out as a variable, so
+    // any further "Connection timeout" can only be explained by the actual
+    // network path (e.g. the hosting provider's outbound SMTP policy), not
+    // by IPv6 resolution.
+    family: 4,
   });
   return transporter;
 };
