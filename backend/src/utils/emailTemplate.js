@@ -9,7 +9,7 @@
 // unreliable), so tables + inline styles are still the only broadly
 // compatible approach. The single `@media` block is a progressive
 // enhancement for clients that do support it (Apple Mail, Gmail app, most
-// mobile clients) and is simply ignAored elsewhere without breaking layout.
+// mobile clients) and is simply ignored elsewhere without breaking layout.
 
 const BRAND_NAME = process.env.SITE_NAME || "Vishal Mall";
 const BRAND_URL = process.env.CLIENT_URL || "#";

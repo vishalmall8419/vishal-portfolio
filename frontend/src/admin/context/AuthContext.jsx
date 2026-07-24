@@ -15,11 +15,22 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   const loadSession = useCallback(async () => {
-    const token = getToken();
+    let token = getToken();
+
     if (!token) {
-      setLoading(false);
-      return;
+      // No access token in this tab yet (e.g. a fresh tab, or it simply
+      // expired between visits) -- try to silently resume the session
+      // from the httpOnly refresh cookie before giving up on it.
+      try {
+        const { data } = await authApi.refresh();
+        token = data.data.token;
+        setToken(token, false);
+      } catch (_) {
+        setLoading(false);
+        return;
+      }
     }
+
     try {
       const { data } = await authApi.me();
       setAdmin(data.data);
@@ -45,7 +56,7 @@ export function AuthProvider({ children }) {
 
   // Step 2: the emailed code. Only this completes the session.
   const verifyOtp = async ({ otpToken, otp, rememberMe }) => {
-    const { data } = await authApi.verifyOtp({ otpToken, otp });
+    const { data } = await authApi.verifyOtp({ otpToken, otp, rememberMe: !!rememberMe });
     setToken(data.data.token, rememberMe);
     setAdmin(data.data.admin);
     return data.data.admin;

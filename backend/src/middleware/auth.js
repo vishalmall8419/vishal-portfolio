@@ -6,8 +6,8 @@ const signAccessToken = (admin) =>
     expiresIn: process.env.JWT_ACCESS_EXPIRES || "15m",
   });
 
-const signRefreshToken = (admin) =>
-  jwt.sign({ sub: admin.id, type: "refresh" }, process.env.JWT_REFRESH_SECRET, {
+const signRefreshToken = (admin, rememberMe = false) =>
+  jwt.sign({ sub: admin.id, type: "refresh", remember: !!rememberMe }, process.env.JWT_REFRESH_SECRET, {
     expiresIn: `${process.env.JWT_REFRESH_EXPIRES_DAYS || 30}d`,
   });
 

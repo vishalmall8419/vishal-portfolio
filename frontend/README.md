@@ -1,115 +1,16 @@
-# Portfolio Frontend
+# React + Vite
 
-A modern, responsive, and production-ready Full Stack Portfolio frontend built with React, Vite, Bootstrap 5, Tailwind CSS, GSAP, and React Router. It provides a premium user experience with smooth animations, responsive layouts, and dynamic content integration.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 🚀 Tech Stack
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- React 19
-- Vite
-- JavaScript (ES6+)
-- Bootstrap 5
-- Tailwind CSS
-- GSAP
-- React Router DOM
-- Axios
-- React Icons
+## React Compiler
 
----
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## ✨ Features
+## Expanding the ESLint configuration
 
-- Modern Premium UI/UX
-- Fully Responsive Design
-- GSAP Animations
-- Dark & Light Theme Support
-- Dynamic Portfolio Sections
-- Projects Showcase
-- Skills Section
-- Education Timeline
-- Experience Section
-- Certificates & Achievements
-- Blog Module
-- Gallery Module
-- Contact Form
-- Authentication
-- Admin Dashboard Integration
-- REST API Integration
-- SEO Optimized
-
----
-
-## 📦 Installation
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Build for production:
-
-```bash
-npm run build
-```
-
-Preview production build:
-
-```bash
-npm run preview
-```
-
----
-
-## 📂 Project Structure
-
-```
-src/
-│── assets/
-│── components/
-│── pages/
-│── layouts/
-│── routes/
-│── services/
-│── hooks/
-│── utils/
-│── admin/
-│── App.jsx
-│── main.jsx
-```
-
----
-
-## 📱 Responsive Design
-
-- Desktop
-- Laptop
-- Tablet
-- Mobile
-
----
-
-## 🔗 Backend
-
-The frontend communicates with a secure Node.js + Express.js REST API using Axios.
-
----
-
-## 👨‍💻 Author
-
-**Vishal Mall**
-
-Full Stack Java Developer
-
----
-
-## 📄 License
-
-This project is created for portfolio and educational purposes.
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

@@ -6,6 +6,7 @@ export const authApi = {
   verifyOtp: (payload) => api.post("/auth/verify-otp", payload),
   resendOtp: (payload) => api.post("/auth/resend-otp", payload),
   me: () => api.get("/auth/me"),
+  refresh: () => api.post("/auth/refresh"),
   logout: () => api.post("/auth/logout"),
   changePassword: (payload) => api.put("/auth/change-password", payload),
 };

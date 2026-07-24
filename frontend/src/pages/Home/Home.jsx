@@ -30,68 +30,32 @@ function Home() {
     description: "Portfolio of Vishal Mall, a Java Full Stack Developer building modern, scalable web applications.",
   });
 
-  return (<PageTransition>
-
-  {/* ===============================
-      Global Components
-  =============================== */}
-  <MouseGlow />
-  <ScrollProgress />
-  <SocialDock />
-  <Navbar />
-
-  {/* ===============================
-      Hero Section
-  =============================== */}
-  <Hero />
-  <Marquee />
-  <StatsCounter />
-
-  {/* ===============================
-      About Me
-  =============================== */}
-  <About />
-  <Services />
-  <Skills />
-  <TechStack />
-
-  {/* ===============================
-      Portfolio
-  =============================== */}
-  <Projects />
-  <GalleryPreview />
-
-  {/* ===============================
-      Career & Education
-  =============================== */}
-  <Education />
-  <Experience />
-  <Certificates />
-  <Achievements />
-
-  {/* ===============================
-      Social Proof
-  =============================== */}
-  <Testimonials />
-  <FAQ />
-
-  {/* ===============================
-      Content
-  =============================== */}
-  <Blog />
-
-  {/* ===============================
-      Contact
-  =============================== */}
-  <CTA />
-  <Contact />
-
-  {/* ===============================
-      Footer
-  =============================== */}
-  <Footer />
-
-</PageTransition>
+  return (
+    <PageTransition>
+      <MouseGlow />
+      <ScrollProgress />
+      <SocialDock />
+      <Navbar />
+      <Hero />
+      <Marquee />
+      <StatsCounter />
+      <About />
+      <Services />
+      <Skills />
+      <TechStack />
+      <Projects />
+      <GalleryPreview />
+      <Education />
+      <Experience />
+      <Certificates />
+      <Achievements />
+      <Testimonials />
+      <FAQ />
+      <Blog />
+      <CTA />
+      <Contact />
+      <Footer />
+    </PageTransition>
   );
 }
 

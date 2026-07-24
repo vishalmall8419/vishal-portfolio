@@ -25,9 +25,22 @@ app.use(
   })
 );
 
+// CLIENT_URL can be a single origin or a comma-separated list (e.g. local
+// dev + the deployed Vercel URL), so production doesn't need code changes
+// to allow more than one frontend origin.
+const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173")
+  .split(",")
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: (origin, callback) => {
+      // Same-origin requests / non-browser tools (curl, health checks) send
+      // no Origin header at all -- always allow those.
+      if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );

@@ -12,15 +12,14 @@ import heroBgPhoto from "../../../assets/images/backgrounds/hero-night-sky.avif"
 function Hero() {
   const heroRef = useRef(null);
   const navigate = useNavigate();
-
   const { siteSettings } = useTheme();
-
   const avatarSrc = resolveAssetUrl(siteSettings?.avatar) || heroFallback;
   const name = siteSettings?.name || "Vishal Mall";
   const resumeUrl = resolveAssetUrl(siteSettings?.resume);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+
       const tl = gsap.timeline();
 
       tl.from(".vm-badge", {
@@ -35,7 +34,7 @@ function Hero() {
             opacity: 0,
             duration: 1,
           },
-          "-=.5",
+          "-=0.5"
         )
         .from(
           ".vm-description",
@@ -44,7 +43,7 @@ function Hero() {
             opacity: 0,
             duration: 0.8,
           },
-          "-=.6",
+          "-=0.6"
         )
         .from(
           ".vm-buttons",
@@ -53,19 +52,27 @@ function Hero() {
             opacity: 0,
             duration: 0.8,
           },
-          "-=.5",
+          "-=0.5"
         )
-        
+        .from(
+          ".vm-stats",
+          {
+            y: 35,
+            opacity: 0,
+            duration: 0.8,
+          },
+          "-=0.5"
+        )
         .from(
           ".vm-profile",
           {
             x: 120,
             opacity: 0,
-            scale: 0.8,
+            scale: .8,
             duration: 1.3,
             ease: "back.out(1.7)",
           },
-          "-=1",
+          "-=1"
         );
 
       gsap.to(".vm-tech", {
@@ -77,72 +84,76 @@ function Hero() {
         ease: "sine.inOut",
       });
 
-      gsap.to(".vm-platform-back, .vm-platform-front", {
+      gsap.to(".vm-platform", {
         scale: 1.03,
         repeat: -1,
         yoyo: true,
         duration: 2.2,
         ease: "sine.inOut",
       });
+
     }, heroRef);
 
     return () => ctx.revert();
+
   }, []);
 
   return (
-    <section className="vm-hero" ref={heroRef}>
-      {/* Background */}
+    <section
+      className="vm-hero"
+      ref={heroRef}
+    >
 
       <div
         className="vm-hero-bg-photo"
-        style={{
-          backgroundImage: `url(${heroBgPhoto})`,
-        }}
+        style={{ backgroundImage: `url(${heroBgPhoto})` }}
         aria-hidden="true"
-      />
+      ></div>
 
       <div className="vm-overlay"></div>
 
       <div className="vm-stars"></div>
 
-      {/* Content */}
-
       <div className="vm-hero-grid">
-        {/* ===========================
-            LEFT CONTENT
-        =========================== */}
+
+        {/* LEFT */}
 
         <div className="vm-hero-left">
+
           <span className="vm-badge">
+
             <span className="vm-dot"></span>
+
             AVAILABLE FOR WORK
+
           </span>
 
           <h1 className="vm-title">
+
             Building
+
             <br />
+
             <span>Future Ready</span>
+            
             Web Experiences
+
           </h1>
 
           <p className="vm-description">
-            I'm {name}, a Java Full Stack Developer creating premium, scalable
-            and modern web applications using Java, React, Spring Boot, Node.js
-            and MySQL.
+            I'm {name}, a Java Full Stack Developer creating premium,
+            scalable and modern web applications using Java, React,
+            Spring Boot, Node.js and MySQL.
           </p>
 
           <div className="vm-buttons">
+
             <Button size="lg" onClick={() => navigate("/projects")}>
               Explore Projects
             </Button>
 
             {resumeUrl ? (
-              <a
-                href={resumeUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="vm-resume-link"
-              >
+              <a href={resumeUrl} target="_blank" rel="noreferrer" className="vm-resume-link">
                 <Button variant="outline" size="lg">
                   Download Resume
                 </Button>
@@ -152,46 +163,62 @@ function Hero() {
                 Download Resume
               </Button>
             )}
+
           </div>
+
+          <div className="vm-stats">
+
+            <div>
+              <h2>20+</h2>
+              <span>Projects</span>
+            </div>
+
+            <div>
+              <h2>15+</h2>
+              <span>Technologies</span>
+            </div>
+
+            <div>
+              <h2>100%</h2>
+              <span>Dedication</span>
+            </div>
+
+          </div>
+
         </div>
 
-        {/* ===========================
-            RIGHT CONTENT
-        =========================== */}
+        {/* RIGHT */}
 
         <div className="vm-hero-right">
-          {/* Back Ring */}
 
-          <div className="vm-platform-back"></div>
+          <div className="vm-tech react">
+            ⚛ React
+          </div>
 
-          {/* Glow */}
+          <div className="vm-tech spring">
+            🌱 Spring
+          </div>
 
-          <div className="vm-profile-glow"></div>
+          <div className="vm-tech java">
+            ☕ Java
+          </div>
 
-          {/* Profile */}
+          <div className="vm-tech mysql">
+            🗄 MySQL
+          </div>
 
-          <div
-            className="vm-profile"
-            style={{
-              backgroundImage: `url(${avatarSrc})`,
-            }}
-          ></div>
+          {/* Image */}
 
-          {/* Front Ring */}
+          <div className="vm-profile" style={{ backgroundImage: `url(${avatarSrc})` }}></div>
 
-          <div className="vm-platform-front"></div>
+          {/* 3D Ring */}
 
-          {/* Floating Tech */}
+          <div className="vm-platform"></div>
 
-          <div className="vm-tech react">⚛ React</div>
-
-          <div className="vm-tech spring">🌱 Spring</div>
-
-          <div className="vm-tech java">☕ Java</div>
-
-          <div className="vm-tech mysql">🗄 MySQL</div>
         </div>
+
       </div>
+
     </section>
   );
 }

@@ -119,6 +119,19 @@ function PremiumFab() {
         </div>
 
         {!isAiPage && (
+          <div className="vm-fab-item" ref={(el) => (itemRefs.current[2] = el)}>
+            <span className="vm-fab-label">VP-ChatBot</span>
+            <button
+              type="button"
+              className="vm-fab-action vm-fab-action-ai"
+              onClick={handleAi}
+              aria-label="Open VP-ChatBot"
+            >
+              <FiMessageCircle />
+            </button>
+          </div>
+        )}
+
         <div className="vm-fab-item" ref={(el) => (itemRefs.current[3] = el)}>
           <span className="vm-fab-label">Chatbot</span>
           <button
@@ -130,9 +143,6 @@ function PremiumFab() {
             <FaRobot />
           </button>
         </div>
-         
-        )}
-
       </div>
 
       <button

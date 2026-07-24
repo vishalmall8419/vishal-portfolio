@@ -16,6 +16,11 @@ const sequelize = new Sequelize(
       underscored: false,
       timestamps: true,
     },
+    // Set DB_SSL=true if the MySQL host requires TLS (some managed
+    // providers do). Railway's public proxy generally doesn't need this.
+    ...(process.env.DB_SSL === "true"
+      ? { dialectOptions: { ssl: { rejectUnauthorized: false } } }
+      : {}),
     pool: { max: 10, min: 0, acquire: 30000, idle: 10000 },
   }
 );

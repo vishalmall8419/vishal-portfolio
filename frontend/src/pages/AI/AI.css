@@ -1,7 +1,3 @@
-body{
-  background: v(--bg-secondary);
-}
-
 .ai-page {
   min-height: 100vh;
   background: var(--bg);
@@ -13,12 +9,14 @@ body{
 .ai-page section {
   max-width: var(--container);
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 .ai-hero {
   position: relative;
   overflow: hidden;
-  padding: 150px 24px 40px;
+  padding-top: 150px;
+  padding-bottom: 40px;
 }
 
 .ai-hero-bg-photo {
@@ -47,11 +45,7 @@ body{
   padding: 6px 16px;
   border-radius: 999px;
 
-  background: linear-gradient(
-    135deg,
-    rgba(124, 92, 255, 0.18),
-    rgba(79, 140, 255, 0.14)
-  );
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(79, 140, 255, 0.14));
   border: 1px solid rgba(124, 92, 255, 0.35);
   color: var(--primary-light);
 
@@ -135,9 +129,7 @@ body{
   font-size: 0.95rem;
 
   box-shadow: var(--glow-primary);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ai-hero-cta:hover {
@@ -295,7 +287,7 @@ body{
   gap: 16px;
   padding: 18px;
   border-right: 1px solid var(--border);
-  background: var(--bg-secondary);
+  background: var(--surface);
 }
 
 .ai-sidebar-new {
@@ -377,11 +369,7 @@ body{
 }
 
 .ai-sidebar-session.active {
-  background: linear-gradient(
-    135deg,
-    rgba(124, 92, 255, 0.18),
-    rgba(79, 140, 255, 0.14)
-  );
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(79, 140, 255, 0.14));
   color: var(--text);
 }
 
@@ -417,7 +405,7 @@ body{
 }
 
 .ai-info {
-  padding: 0px 24px 60px;
+  padding: 100px 24px 60px;
 }
 
 .ai-info-head {
@@ -476,7 +464,7 @@ body{
 
 /* Details: how it works / why / features / notice */
 .ai-details {
-  padding: 20px 24px 30px;
+  padding: 80px 24px 100px;
 }
 
 .ai-details-grid {
@@ -530,11 +518,7 @@ body{
   border-radius: 10px;
   display: grid;
   place-items: center;
-  background: linear-gradient(
-    135deg,
-    rgba(124, 92, 255, 0.22),
-    rgba(79, 140, 255, 0.16)
-  );
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.22), rgba(79, 140, 255, 0.16));
   color: var(--primary-light);
   font-size: 0.8rem;
   font-weight: 700;
@@ -613,7 +597,7 @@ body{
 }
 
 .ai-cta {
-  padding: 20px 24px 30px;
+  padding: 60px 24px 90px;
 }
 
 .ai-cta-inner {
@@ -623,15 +607,10 @@ body{
   justify-content: space-between;
   gap: 24px;
 
-  padding: 20px 40px;
+  padding: 40px;
   border-radius: var(--radius-lg);
 
-  background: linear-gradient(
-    135deg,
-    rgba(124, 92, 255, 0.14),
-    rgba(79, 140, 255, 0.1) 55%,
-    rgba(245, 166, 35, 0.1)
-  );
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.14), rgba(79, 140, 255, 0.1) 55%, rgba(245, 166, 35, 0.1));
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
