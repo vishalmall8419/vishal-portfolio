@@ -22,11 +22,11 @@ const NavStructure = [
     type: "dropdown",
     title: "Explore",
     items: [
-      { id: "skills", title: "Skills", path: "/skills", description: "Tech stack & proficiency" },
-      { id: "projects", title: "Projects", path: "/projects", description: "Featured case studies" },
-      { id: "gallery", title: "Gallery", path: "/gallery", description: "Moments & behind the scenes" },
-      { id: "blog", title: "Blog", path: "/blog", description: "Writing & notes" },
-      { id: "open-source", title: "Open Source", path: "/open-source", description: "Public contributions" },
+      { id: "skills", title: "Skills", path: "/skills"},
+      { id: "projects", title: "Projects", path: "/projects"},
+      { id: "gallery", title: "Gallery", path: "/gallery"},
+      { id: "blog", title: "Blog", path: "/blog" },
+      { id: "open-source", title: "Open Source", path: "/open-source" },
     ],
   },
   {
@@ -34,11 +34,11 @@ const NavStructure = [
     type: "dropdown",
     title: "More",
     items: [
-      { id: "services", title: "Services", path: "/services", description: "What I offer" },
-      { id: "resume", title: "Resume", path: "/resume", description: "Download my CV" },
-      { id: "certificates", title: "Certificates", path: "/certificates", description: "Courses & credentials" },
-      { id: "achievements", title: "Achievements", path: "/achievements", description: "Awards & milestones" },
-      { id: "contact", title: "Contact", path: "/contact", description: "Get in touch" },
+      { id: "services", title: "Services", path: "/services"},
+      { id: "resume", title: "Resume", path: "/resume" },
+      { id: "certificates", title: "Certificates", path: "/certificates"},
+      { id: "achievements", title: "Achievements", path: "/achievements"},
+      { id: "contact", title: "Contact", path: "/contact" },
     ],
   },
 ];
