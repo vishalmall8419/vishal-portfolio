@@ -27,7 +27,7 @@ import useSeo from "../../hooks/useSeo";
 function Home() {
   useSeo("home", {
     title: "Vishal Mall — Full Stack Developer",
-    description: "Portfolio of Vishal Mall, a Java Full Stack Developer building modern, scalable web applications.",
+    description: "Portfolio of Vishal Mall, a Full Stack Developer building modern, scalable web applications.",
   });
 
   return (

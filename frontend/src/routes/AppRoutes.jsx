@@ -28,21 +28,7 @@ const Resume = lazy(() => import("../pages/Resume/Resume"));
 const NotFound = lazy(() => import("../pages/NotFound/NotFound"));
 const AdminRoutes = lazy(() => import("../admin/routes/AdminRoutes"));
 
-function RouteFallback() {
-  return (
-    <div
-      style={{
-        minHeight: "60vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "var(--text-muted, #888)",
-      }}
-    >
-      Loading…
-    </div>
-  );
-}
+
 
 function AppRoutes() {
   return (

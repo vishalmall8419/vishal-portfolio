@@ -162,13 +162,7 @@
     flex-direction: column;
     gap: 30px;
   }
-  .vm-dropdown-panel {
-    height: 260px;
-    overflow-y: scroll;
-    scrollbar-width: 0px;
-    overflow-x: hidden;
-  }
-
+ 
   .vm-navbar-scrolled .vm-navbar-container {
     background: rgba(8, 10, 22, 0.78);
 

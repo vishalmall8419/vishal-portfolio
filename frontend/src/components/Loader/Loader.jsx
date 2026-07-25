@@ -86,7 +86,7 @@ function Loader({ onComplete }) {
         </h1>
 
         <p className="vm-loader-role">
-          Java Full Stack Developer
+          Full Stack Developer
         </p>
 
         {/* Progress */}
