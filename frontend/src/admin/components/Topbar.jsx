@@ -133,7 +133,10 @@ export default function Topbar({ onMenuClick, unreadCount, recentNotifications =
           <button className="admx-profile-btn" onClick={() => setProfileOpen((o) => !o)}>
             <span className="admx-avatar">
               {admin?.avatar ? (
-                <img src={`${FILE_BASE_URL}${admin.avatar}`} alt={admin.name} />
+                <img
+                  src={/^https?:\/\//i.test(admin.avatar) ? admin.avatar : `${FILE_BASE_URL}${admin.avatar}`}
+                  alt={admin.name}
+                />
               ) : (
                 (admin?.name || "A").charAt(0).toUpperCase()
               )}

@@ -2,8 +2,10 @@ const { Settings, Admin } = require("../models");
 const asyncHandler = require("../utils/asyncHandler");
 const ApiError = require("../utils/ApiError");
 const { ok } = require("../utils/apiResponse");
+const { uploadBufferToCloudinary, resolveSettingsResourceType } = require("../middleware/cloudinaryUpload");
 
 const ALLOWED_ASSET_FIELDS = new Set(["logo", "favicon", "resume", "avatar", "aiAvatar"]);
+const CLOUDINARY_SETTINGS_FOLDER = "portfolio/settings";
 
 const getSingleton = async () => {
   const [row] = await Settings.findOrCreate({ where: { id: 1 }, defaults: { id: 1 } });
@@ -116,7 +118,12 @@ const updateProfile = asyncHandler(async (req, res) => {
   if (name !== undefined) admin.name = name;
   if (email !== undefined) admin.email = email;
   if (phone !== undefined) admin.phone = phone;
-  if (req.file) admin.avatar = `/uploads/${req.file.filename}`;
+  if (req.file) {
+    const uploaded = await uploadBufferToCloudinary(req.file.buffer, `${CLOUDINARY_SETTINGS_FOLDER}/avatars`, {
+      resourceType: resolveSettingsResourceType(req.file.mimetype),
+    });
+    admin.avatar = uploaded.url;
+  }
   await admin.save();
 
   ok(res, {
@@ -139,8 +146,14 @@ const uploadAsset = asyncHandler(async (req, res) => {
   const file = (req.files || []).find((f) => f.fieldname === field) || req.files?.[0];
   if (!file) throw new ApiError(400, "No file uploaded.");
 
+  // "resume" is a PDF and gets uploaded as a Cloudinary "raw" asset; every
+  // other field (logo/favicon/avatar/aiAvatar) is an image.
+  const uploaded = await uploadBufferToCloudinary(file.buffer, CLOUDINARY_SETTINGS_FOLDER, {
+    resourceType: resolveSettingsResourceType(file.mimetype),
+  });
+
   const row = await getSingleton();
-  await row.update({ [field]: `/uploads/${file.filename}` });
+  await row.update({ [field]: uploaded.url });
   ok(res, row);
 });
 

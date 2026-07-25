@@ -664,7 +664,14 @@ export default function Settings() {
                 />
                 {settings?.resume && (
                   <div className="admx-hint">
-                    Current file: <a href={`${FILE_BASE_URL}${settings.resume}`} target="_blank" rel="noreferrer">view resume</a>
+                    Current file:{" "}
+                    <a
+                      href={/^https?:\/\//i.test(settings.resume) ? settings.resume : `${FILE_BASE_URL}${settings.resume}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      view resume
+                    </a>
                   </div>
                 )}
               </div>
