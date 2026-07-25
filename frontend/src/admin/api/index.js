@@ -74,12 +74,19 @@ export const themeApi = {
 export const settingsApi = {
   get: () => api.get("/settings"),
   update: (payload) => api.put("/settings", payload),
+  // These proxy the file to Cloudinary server-side (see
+  // backend/src/middleware/cloudinaryUpload.js, 30s Cloudinary timeout), so
+  // they get a longer client timeout than the 20s default — long enough to
+  // receive the backend's real success/error response instead of the
+  // browser giving up first with a generic "timeout of Xms exceeded".
   updateProfile: (formData) =>
     api.put("/settings/profile", formData, {
       headers: { "Content-Type": "multipart/form-data" },
+      timeout: 45_000,
     }),
   uploadAsset: (field, formData) =>
     api.put(`/settings/upload/${field}`, formData, {
       headers: { "Content-Type": "multipart/form-data" },
+      timeout: 45_000,
     }),
 };
