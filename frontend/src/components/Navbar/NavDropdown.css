@@ -34,7 +34,7 @@
   visibility: hidden;
   opacity: 0;
 
-  min-width: 300px;
+  min-width: 200px;
   z-index: 10000;
 
   border-radius: var(--radius-md, 18px);
@@ -78,7 +78,7 @@
   flex-direction: column;
   gap: 2px;
 
-  padding: 12px 14px;
+  padding: 6px 6px;
   border-radius: 12px;
 
   color: var(--text-light);
