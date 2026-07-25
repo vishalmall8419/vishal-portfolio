@@ -153,6 +153,7 @@
   }
 
   .vm-nav-open {
+    transform: translateY(0px);
     padding: 17px;
   }
 
