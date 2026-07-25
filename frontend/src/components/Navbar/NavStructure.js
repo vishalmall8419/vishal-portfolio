@@ -26,6 +26,7 @@ const NavStructure = [
       { id: "projects", title: "Projects", path: "/projects", description: "Featured case studies" },
       { id: "gallery", title: "Gallery", path: "/gallery", description: "Moments & behind the scenes" },
       { id: "blog", title: "Blog", path: "/blog", description: "Writing & notes" },
+      { id: "open-source", title: "Open Source", path: "/open-source", description: "Public contributions" },
     ],
   },
   {
@@ -37,9 +38,7 @@ const NavStructure = [
       { id: "resume", title: "Resume", path: "/resume", description: "Download my CV" },
       { id: "certificates", title: "Certificates", path: "/certificates", description: "Courses & credentials" },
       { id: "achievements", title: "Achievements", path: "/achievements", description: "Awards & milestones" },
-      { id: "open-source", title: "Open Source", path: "/open-source", description: "Public contributions" },
       { id: "contact", title: "Contact", path: "/contact", description: "Get in touch" },
-      { id: "ai", title: "ChatBot", path: "/ai", description: "Ask about this portfolio" },
     ],
   },
 ];

@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { FiPlus, FiX, FiArrowUp, FiSun, FiMoon, FiMessageCircle } from "react-icons/fi";
+import {
+  FiPlus,
+  FiX,
+  FiArrowUp,
+  FiSun,
+  FiMoon,
+  FiMessageCircle,
+} from "react-icons/fi";
 import { FaRobot } from "react-icons/fa";
 import { gsap } from "../../lib/gsap";
 import useTheme from "../../hooks/useTheme";
@@ -64,7 +71,14 @@ function PremiumFab() {
         gsap.fromTo(
           itemEls,
           { autoAlpha: 0, y: 22, scale: 0.6 },
-          { autoAlpha: 1, y: 0, scale: 1, duration: 0.45, stagger: 0.07, ease: "back.out(1.8)" }
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.45,
+            stagger: 0.07,
+            ease: "back.out(1.8)",
+          },
         );
       } else {
         gsap.to(itemEls, {
@@ -106,43 +120,43 @@ function PremiumFab() {
       <div className="vm-fab-actions" ref={actionsRef}>
         <div className="vm-fab-item" ref={(el) => (itemRefs.current[0] = el)}>
           <span className="vm-fab-label">Go To Top</span>
-          <button type="button" className="vm-fab-action" onClick={handleTop} aria-label="Scroll to top">
+          <button
+            type="button"
+            className="vm-fab-action"
+            onClick={handleTop}
+            aria-label="Scroll to top"
+          >
             <FiArrowUp />
           </button>
         </div>
 
         <div className="vm-fab-item" ref={(el) => (itemRefs.current[1] = el)}>
-          <span className="vm-fab-label">{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
-          <button type="button" className="vm-fab-action" onClick={handleTheme} aria-label="Toggle theme">
+          <span className="vm-fab-label">
+            {theme === "dark" ? "Light Mode" : "Dark Mode"}
+          </span>
+          <button
+            type="button"
+            className="vm-fab-action"
+            onClick={handleTheme}
+            aria-label="Toggle theme"
+          >
             {theme === "dark" ? <FiSun /> : <FiMoon />}
           </button>
         </div>
 
         {!isAiPage && (
-          <div className="vm-fab-item" ref={(el) => (itemRefs.current[2] = el)}>
-            <span className="vm-fab-label">VP-ChatBot</span>
+          <div className="vm-fab-item" ref={(el) => (itemRefs.current[3] = el)}>
+            <span className="vm-fab-label">Chatbot</span>
             <button
               type="button"
-              className="vm-fab-action vm-fab-action-ai"
-              onClick={handleAi}
-              aria-label="Open VP-ChatBot"
+              className="vm-fab-action vm-fab-action-chatbot"
+              onClick={handleChatbot}
+              aria-label="Open chatbot"
             >
-              <FiMessageCircle />
+              <FaRobot />
             </button>
           </div>
         )}
-
-        <div className="vm-fab-item" ref={(el) => (itemRefs.current[3] = el)}>
-          <span className="vm-fab-label">Chatbot</span>
-          <button
-            type="button"
-            className="vm-fab-action vm-fab-action-chatbot"
-            onClick={handleChatbot}
-            aria-label="Open chatbot"
-          >
-            <FaRobot />
-          </button>
-        </div>
       </div>
 
       <button
