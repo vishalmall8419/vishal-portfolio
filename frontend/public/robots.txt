@@ -17,3 +17,9 @@ Disallow: /api/auth/
 
 # Sitemap
 Sitemap: https://vishalmall.vercel.app/sitemap.xml
+
+User-agent: *
+
+Allow: /
+
+Sitemap: https://vishalmall.vercel.app/sitemap.xml
