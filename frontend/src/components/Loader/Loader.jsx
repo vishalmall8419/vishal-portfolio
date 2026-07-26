@@ -14,7 +14,7 @@ function Loader({ onComplete }) {
             if (onComplete) {
               onComplete();
             }
-          }, 400);
+          }, 200);
 
           return 100;
         }
