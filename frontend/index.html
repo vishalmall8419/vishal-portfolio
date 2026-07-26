@@ -1,357 +1,711 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- ========================= -->
+    <!-- BASIC META -->
+    <!-- ========================= -->
+
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vishal Mall — Full Stack Developer Portfolio</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <title>Vishal Mall | Full Stack Developer</title>
 
     <meta
       name="description"
-      content="Portfolio of Vishal Mall, a Full Stack Developer building modern, scalable web applications with React, Node.js, java, jdbc, hibernate, and MySQL."
+      content="Official portfolio of Vishal Mall, Full Stack Developer specializing in React, Node.js, Java, Spring Boot, Express.js, MySQL, REST APIs, responsive UI, scalable web applications and modern software development."
     />
-    <meta name="robots" content="index, follow" />
+
+    <meta
+      name="keywords"
+      content="Vishal Mall, Full Stack Developer, React Developer, Node.js Developer, Java Developer, Spring Boot Developer, Express.js, MySQL, JavaScript, Hibernate, REST API, Portfolio, Web Developer, Software Engineer"
+    />
+
+    <meta name="author" content="Vishal Mall" />
+    <meta name="creator" content="Vishal Mall" />
+    <meta name="publisher" content="Vishal Mall" />
+    <meta name="copyright" content="Vishal Mall" />
+
+    <meta name="application-name" content="Vishal Mall Portfolio" />
+    <meta name="apple-mobile-web-app-title" content="Vishal Mall" />
+
     <meta name="theme-color" content="#050816" />
+    <meta name="color-scheme" content="dark light" />
 
-    <meta property="og:type" content="website" />
     <meta
-      property="og:title"
-      content="Vishal Mall — Full Stack Developer Portfolio"
+      name="robots"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
     />
     <meta
-      property="og:description"
-      content="Portfolio of Vishal Mall, a Full Stack Developer building modern, scalable web applications with React, Node.js, java, jdbc, Hibernate, and MySQL."
+      name="googlebot"
+      content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
     />
+    <meta name="bingbot" content="index,follow" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Vishal Mall — Full Stack Developer Portfolio"
-    />
-    <meta
-      name="twitter:description"
-      content="Portfolio of Vishal Mall, a Full Stack Developer building modern, scalable web applications with React, Node.js, Spring Boot and MySQL."
-    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <meta name="format-detection" content="telephone=no" />
+
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.country" content="India" />
+
+    <link rel="canonical" href="https://vishalmall.vercel.app/" />
+
+    <link rel="icon" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+
+    <link rel="manifest" href="/manifest.json" />
+
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
     <meta
       name="google-site-verification"
       content="LDEwXJMsI7-nOyTSYSdHWiVsLuxudBbJm3V5BBuvrsk"
     />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="msapplication-TileColor" content="#050816" />
     <meta name="msapplication-config" content="/browserconfig.xml" />
-    <meta name="msapplication-TileColor" content="#0f172a" />
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+    <!-- ========================================= -->
+    <!-- OPEN GRAPH (Facebook, LinkedIn, Discord) -->
+    <!-- ========================================= -->
 
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Vishal Mall" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:url" content="https://vishalmall.vercel.app/" />
 
+    <meta property="og:title" content="Vishal Mall | Full Stack Developer" />
+
+    <meta
+      property="og:description"
+      content="Official portfolio of Vishal Mall, a Full Stack Developer specializing in React, Java, Spring Boot, Node.js, Express.js, MySQL, REST APIs, scalable web applications and modern software engineering."
+    />
+
+    <meta
+      property="og:image"
+      content="https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg"
+    />
+
+    <meta
+      property="og:image:secure_url"
+      content="https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg"
+    />
+
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+
+    <meta
+      property="og:image:alt"
+      content="Vishal Mall - Full Stack Developer"
+    />
+
+    <meta property="og:image:locale" content="en_IN" />
+
+    <!-- ========================================= -->
+    <!-- TWITTER / X -->
+    <!-- ========================================= -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:title" content="Vishal Mall | Full Stack Developer" />
+
+    <meta
+      name="twitter:description"
+      content="Official portfolio of Vishal Mall showcasing Full Stack Development, React, Java, Spring Boot, Node.js, MySQL, projects, blogs and professional experience."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg"
+    />
+
+    <meta
+      name="twitter:image:alt"
+      content="Vishal Mall - Full Stack Developer"
+    />
+
+    <meta name="twitter:creator" content="@MrVishalMa24207" />
+
+    <meta name="twitter:site" content="@MrVishalMa24207" />
+
+    <!-- ========================================= -->
+    <!-- LINKEDIN -->
+    <!-- ========================================= -->
+
+    <meta
+      property="article:author"
+      content="https://www.linkedin.com/in/vishal-mall-536506302/"
+    />
+
+    <!-- ========================================= -->
+    <!-- PROFILE -->
+    <!-- ========================================= -->
+
+    <meta name="profile:first_name" content="Vishal" />
+
+    <meta name="profile:last_name" content="Mall" />
+
+    <!-- ========================================= -->
+    <!-- SEARCH ENGINE -->
+    <!-- ========================================= -->
+
+    <meta name="rating" content="general" />
+
+    <meta name="distribution" content="global" />
+
+    <meta name="revisit-after" content="7 days" />
+
+    <meta name="target" content="all" />
+
+    <meta name="audience" content="developers" />
+
+    <meta name="subject" content="Full Stack Development" />
+
+    <meta name="category" content="Portfolio" />
+
+    <meta name="classification" content="Technology" />
+
+    <!-- ========================================= -->
+    <!-- SECURITY -->
+    <!-- ========================================= -->
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <!-- ========================================= -->
+    <!-- OPTIONAL / ADVANCED META TAGS -->
+    <!-- ========================================= -->
+
+    <!-- Content Information -->
+    <meta name="application-name" content="Vishal Mall Portfolio" />
+    <meta name="generator" content="React + Vite" />
+
+    <!-- Content Language -->
+    <meta http-equiv="content-language" content="en-IN" />
+
+    <!-- Geographic Information -->
+    <meta name="geo.position" content="23.1765;79.9864" />
+    <meta name="ICBM" content="23.1765,79.9864" />
+
+    <!-- Search Classification -->
+    <meta name="coverage" content="Worldwide" />
+    <meta name="resource-type" content="Document" />
+
+    <!-- Browser Compatibility -->
+    <meta http-equiv="cleartype" content="on" />
+
+    <!-- Image Preview -->
+    <meta
+      name="thumbnail"
+      content="https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg"
+    />
+
+    <!-- Microsoft -->
+    <meta name="msapplication-tooltip" content="Vishal Mall Portfolio" />
+    <meta name="msapplication-starturl" content="/" />
+
+    <!-- Apple -->
+    <meta name="apple-touch-fullscreen" content="yes" />
+
+    <!-- Cache (generally avoid on dynamic sites; use only if desired) -->
+    <meta http-equiv="Cache-Control" content="public" />
+
+    <!-- Theme Colors -->
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#ffffff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#050816"
+    />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ImageObject",
+            "@id": "https://vishalmall.vercel.app/#profile-image",
+            "url": "https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg",
+            "contentUrl": "https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg",
+            "width": 1200,
+            "height": 1200,
+            "caption": "Vishal Mall - Full Stack Developer",
+            "representativeOfPage": true
+          },
 
-    {
-      "@type": "Person",
-      "@id": "https://vishalmall.vercel.app/#person",
-      "name": "Vishal Mall",
-      "givenName": "Vishal",
-      "familyName": "Mall",
-      "url": "https://vishalmall.vercel.app/",
-      "image": "https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg",
-      "email": "mailto:vishal.mall02@outlook.com",
-      "jobTitle": "Full Stack Developer",
-      "description": "Full Stack Developer specializing in React, Node.js, Express.js, Spring Boot, Java, MySQL, Hibernate, REST APIs, modern UI/UX, scalable web applications, and responsive web development.",
-      "nationality": "Indian",
-      "worksFor": {
-        "@id": "https://vishalmall.vercel.app/#organization"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Mahamaya Polytechnic of Information Technology"
-      },
-      "knowsAbout": [
-        "Full Stack Development",
-        "Java",
-        "Spring Boot",
-        "React",
-        "Node.js",
-        "Express.js",
-        "MySQL",
-        "Hibernate",
-        "JDBC",
-        "JSP",
-        "JavaScript",
-        "HTML5",
-        "CSS3",
-        "Bootstrap",
-        "Tailwind CSS",
-        "GSAP",
-        "REST API",
-        "JWT Authentication",
-        "Sequelize",
-        "Git",
-        "GitHub",
-        "Responsive Web Design",
-        "Web Application Development",
-        "Portfolio Development"
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/in/vishal-mall-536506302/",
-        "https://github.com/vishalmall8419",
-        "https://x.com/MrVishalMa24207"
-      ]
-    },
+          {
+            "@type": "Person",
+            "@id": "https://vishalmall.vercel.app/#person",
+            "name": "Vishal Mall",
+            "givenName": "Vishal",
+            "familyName": "Mall",
+            "alternateName": ["Vishal", "Vishal Mall Developer"],
+            "url": "https://vishalmall.vercel.app/",
+            "mainEntityOfPage": "https://vishalmall.vercel.app/",
+            "image": {
+              "@id": "https://vishalmall.vercel.app/#profile-image"
+            },
+            "email": "mailto:vishal.mall02@outlook.com",
+            "jobTitle": "Full Stack Developer",
+            "nationality": "Indian",
+            "gender": "Male",
 
-    {
-      "@type": "Organization",
-      "@id": "https://vishalmall.vercel.app/#organization",
-      "name": "Vishal Mall Portfolio",
-      "url": "https://vishalmall.vercel.app/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg"
-      },
-      "image": "https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg",
-      "founder": {
-        "@id": "https://vishalmall.vercel.app/#person"
-      },
-      "description": "Official portfolio website of Full Stack Developer Vishal Mall.",
-      "sameAs": [
-        "https://www.linkedin.com/in/vishal-mall-536506302/",
-        "https://github.com/vishalmall8419",
-        "https://x.com/MrVishalMa24207"
-      ]
-    },
+            "description": "Vishal Mall is a Full Stack Developer specializing in React, Node.js, Express.js, Spring Boot, Java, MySQL, Hibernate, REST APIs, GSAP animations, responsive UI development, scalable web applications and modern software engineering.",
 
-    {
-      "@type": "WebSite",
-      "@id": "https://vishalmall.vercel.app/#website",
-      "url": "https://vishalmall.vercel.app/",
-      "name": "Vishal Mall | Full Stack Developer",
-      "description": "Official portfolio of Vishal Mall, Full Stack Developer specializing in React, Node.js, Spring Boot, Java, MySQL, and modern web applications.",
-      "publisher": {
-        "@id": "https://vishalmall.vercel.app/#organization"
-      },
-      "inLanguage": "en-IN"
-    },
+            "worksFor": {
+              "@id": "https://vishalmall.vercel.app/#organization"
+            },
 
-    {
-      "@type": "WebPage",
-      "@id": "https://vishalmall.vercel.app/#homepage",
-      "url": "https://vishalmall.vercel.app/",
-      "name": "Vishal Mall | Full Stack Developer",
-      "isPartOf": {
-        "@id": "https://vishalmall.vercel.app/#website"
-      },
-      "about": {
-        "@id": "https://vishalmall.vercel.app/#person"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg"
-      },
-      "description": "Explore the professional portfolio of Vishal Mall, a Full Stack Developer with expertise in React, Node.js, Spring Boot, Java, MySQL, REST APIs, and scalable web application development."
-    }
+            "hasOccupation": {
+              "@id": "https://vishalmall.vercel.app/#occupation"
+            },
 
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Mahamaya Polytechnic of Information Technology"
+            },
 
-    {
-      "@type": "ImageObject",
-      "@id": "https://vishalmall.vercel.app/#image",
-      "url": "https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg",
-      "contentUrl": "https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg",
-      "caption": "Vishal Mall - Full Stack Developer"
-    },
+            "knowsLanguage": ["English", "Hindi"],
 
-    {
-      "@type": "Person",
-      "@id": "https://vishalmall.vercel.app/#person",
-      "name": "Vishal Mall",
-      "givenName": "Vishal",
-      "familyName": "Mall",
-      "url": "https://vishalmall.vercel.app/",
-      "image": {
-        "@id": "https://vishalmall.vercel.app/#image"
-      },
-      "email": "mailto:vishal.mall02@outlook.com",
-      "jobTitle": "Full Stack Developer",
-      "nationality": "Indian",
-      "description": "Full Stack Developer specializing in React, Node.js, Express.js, Spring Boot, Java, MySQL, Hibernate, REST APIs, scalable web applications, responsive UI/UX and modern software development.",
-      "worksFor": {
-        "@id": "https://vishalmall.vercel.app/#organization"
-      },
-      "hasOccupation": {
-        "@id": "https://vishalmall.vercel.app/#occupation"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "Mahamaya Polytechnic of Information Technology"
-      },
-      "knowsAbout": [
-        "Full Stack Development",
-        "Java",
-        "Spring Boot",
-        "React",
-        "Node.js",
-        "Express.js",
-        "MySQL",
-        "Hibernate",
-        "JDBC",
-        "JSP",
-        "JavaScript",
-        "HTML5",
-        "CSS3",
-        "Bootstrap",
-        "Tailwind CSS",
-        "GSAP",
-        "REST API",
-        "JWT Authentication",
-        "Sequelize",
-        "Git",
-        "GitHub",
-        "Responsive Web Design",
-        "Web Development"
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/in/vishal-mall-536506302/",
-        "https://github.com/vishalmall8419",
-        "https://x.com/MrVishalMa24207"
-      ]
-    },
+            "knowsAbout": [
+              "Full Stack Development",
+              "Frontend Development",
+              "Backend Development",
+              "Java",
+              "Spring Boot",
+              "React",
+              "Node.js",
+              "Express.js",
+              "JavaScript",
+              "TypeScript",
+              "MySQL",
+              "Hibernate",
+              "JDBC",
+              "JSP",
+              "REST API",
+              "JWT Authentication",
+              "Bootstrap",
+              "Tailwind CSS",
+              "GSAP",
+              "Sequelize ORM",
+              "Git",
+              "GitHub",
+              "Cloudinary",
+              "Responsive Web Design",
+              "Portfolio Development",
+              "Web Performance",
+              "SEO",
+              "API Development"
+            ],
 
-    {
-      "@type": "Occupation",
-      "@id": "https://vishalmall.vercel.app/#occupation",
-      "name": "Full Stack Developer",
-      "occupationLocation": {
-        "@type": "Country",
-        "name": "India"
-      },
-      "skills": [
-        "React",
-        "Node.js",
-        "Java",
-        "Spring Boot",
-        "Express.js",
-        "MySQL",
-        "REST API",
-        "Bootstrap",
-        "Tailwind CSS"
-      ]
-    },
+            "sameAs": [
+              "https://www.linkedin.com/in/vishal-mall-536506302/",
+              "https://github.com/vishalmall8419",
+              "https://x.com/MrVishalMa24207"
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "Brand",
+            "@id": "https://vishalmall.vercel.app/#brand",
+            "name": "Vishal Mall",
+            "logo": "https://res.cloudinary.com/x8pzhupk/image/upload/v1784986009/portfolio/settings/rtj481db8v1xcz9cm6kf.jpg",
+            "url": "https://vishalmall.vercel.app/"
+          },
 
-    {
-      "@type": "Organization",
-      "@id": "https://vishalmall.vercel.app/#organization",
-      "name": "Vishal Mall Portfolio",
-      "url": "https://vishalmall.vercel.app/",
-      "logo": {
-        "@id": "https://vishalmall.vercel.app/#image"
-      },
-      "image": {
-        "@id": "https://vishalmall.vercel.app/#image"
-      },
-      "description": "Official portfolio website of Full Stack Developer Vishal Mall.",
-      "founder": {
-        "@id": "https://vishalmall.vercel.app/#person"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Customer Support",
-        "email": "vishal.mall02@outlook.com",
-        "availableLanguage": [
-          "English",
-          "Hindi"
+          {
+            "@type": "Occupation",
+            "@id": "https://vishalmall.vercel.app/#occupation",
+            "name": "Full Stack Developer",
+
+            "occupationLocation": {
+              "@type": "Country",
+              "name": "India"
+            },
+
+            "description": "Designs, develops and maintains scalable full stack web applications using modern frontend and backend technologies.",
+
+            "skills": [
+              "React",
+              "Node.js",
+              "Express.js",
+              "Java",
+              "Spring Boot",
+              "JavaScript",
+              "MySQL",
+              "Hibernate",
+              "JDBC",
+              "Bootstrap",
+              "Tailwind CSS",
+              "GSAP",
+              "REST API",
+              "Git",
+              "GitHub"
+            ]
+          },
+
+          {
+            "@type": "Organization",
+            "@id": "https://vishalmall.vercel.app/#organization",
+
+            "name": "Vishal Mall",
+
+            "legalName": "Vishal Mall",
+
+            "url": "https://vishalmall.vercel.app/",
+
+            "logo": {
+              "@id": "https://vishalmall.vercel.app/#profile-image"
+            },
+
+            "image": {
+              "@id": "https://vishalmall.vercel.app/#profile-image"
+            },
+
+            "founder": {
+              "@id": "https://vishalmall.vercel.app/#person"
+            },
+
+            "foundingLocation": {
+              "@type": "Country",
+              "name": "India"
+            },
+
+            "description": "Official personal portfolio website of Vishal Mall, Full Stack Developer.",
+
+            "contactPoint": {
+              "@type": "ContactPoint",
+
+              "contactType": "customer support",
+
+              "email": "vishal.mall02@outlook.com",
+
+              "availableLanguage": ["English", "Hindi"]
+            },
+
+            "sameAs": [
+              "https://www.linkedin.com/in/vishal-mall-536506302/",
+              "https://github.com/vishalmall8419",
+              "https://x.com/MrVishalMa24207"
+            ]
+          },
+
+          {
+            "@type": "WebSite",
+            "@id": "https://vishalmall.vercel.app/#website",
+
+            "url": "https://vishalmall.vercel.app/",
+
+            "name": "Vishal Mall",
+
+            "alternateName": "Vishal Mall Portfolio",
+
+            "description": "Official portfolio website of Vishal Mall.",
+
+            "publisher": {
+              "@id": "https://vishalmall.vercel.app/#organization"
+            },
+
+            "about": {
+              "@id": "https://vishalmall.vercel.app/#person"
+            },
+
+            "inLanguage": "en-IN"
+          },
+
+          {
+            "@type": "WebPage",
+            "@id": "https://vishalmall.vercel.app/#homepage",
+
+            "url": "https://vishalmall.vercel.app/",
+
+            "name": "Vishal Mall | Full Stack Developer",
+
+            "isPartOf": {
+              "@id": "https://vishalmall.vercel.app/#website"
+            },
+
+            "primaryImageOfPage": {
+              "@id": "https://vishalmall.vercel.app/#profile-image"
+            },
+
+            "about": {
+              "@id": "https://vishalmall.vercel.app/#person"
+            },
+
+            "description": "Official portfolio of Vishal Mall featuring projects, skills, blogs, experience and modern full stack web development."
+          }
         ]
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/vishal-mall-536506302/",
-        "https://github.com/vishalmall8419",
-        "https://x.com/MrVishalMa24207"
-      ]
-    },
-
-    {
-      "@type": "WebSite",
-      "@id": "https://vishalmall.vercel.app/#website",
-      "url": "https://vishalmall.vercel.app/",
-      "name": "Vishal Mall | Full Stack Developer",
-      "description": "Official portfolio of Full Stack Developer Vishal Mall.",
-      "publisher": {
-        "@id": "https://vishalmall.vercel.app/#organization"
-      },
-      "inLanguage": "en-IN",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://vishalmall.vercel.app/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
       }
-    },
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfilePage",
+            "@id": "https://vishalmall.vercel.app/#profile",
 
-    {
-      "@type": "WebPage",
-      "@id": "https://vishalmall.vercel.app/#homepage",
-      "url": "https://vishalmall.vercel.app/",
-      "name": "Vishal Mall | Full Stack Developer",
-      "isPartOf": {
-        "@id": "https://vishalmall.vercel.app/#website"
-      },
-      "about": {
-        "@id": "https://vishalmall.vercel.app/#person"
-      },
-      "primaryImageOfPage": {
-        "@id": "https://vishalmall.vercel.app/#image"
-      },
-      "breadcrumb": {
-        "@id": "https://vishalmall.vercel.app/#breadcrumb"
+            "url": "https://vishalmall.vercel.app/",
+
+            "name": "Vishal Mall | Full Stack Developer",
+
+            "description": "Official profile of Vishal Mall, a Full Stack Developer specializing in modern web application development.",
+
+            "mainEntity": {
+              "@id": "https://vishalmall.vercel.app/#person"
+            },
+
+            "isPartOf": {
+              "@id": "https://vishalmall.vercel.app/#website"
+            }
+          },
+
+          {
+            "@type": "CreativeWork",
+            "@id": "https://vishalmall.vercel.app/#portfolio",
+
+            "name": "Vishal Mall Portfolio",
+
+            "headline": "Official Portfolio of Vishal Mall",
+
+            "creator": {
+              "@id": "https://vishalmall.vercel.app/#person"
+            },
+
+            "author": {
+              "@id": "https://vishalmall.vercel.app/#person"
+            },
+
+            "publisher": {
+              "@id": "https://vishalmall.vercel.app/#organization"
+            },
+
+            "image": {
+              "@id": "https://vishalmall.vercel.app/#profile-image"
+            },
+
+            "url": "https://vishalmall.vercel.app/",
+
+            "inLanguage": "en-IN"
+          },
+
+          {
+            "@type": "CollectionPage",
+            "@id": "https://vishalmall.vercel.app/#collection",
+
+            "name": "Portfolio",
+
+            "url": "https://vishalmall.vercel.app/",
+
+            "about": {
+              "@id": "https://vishalmall.vercel.app/#person"
+            }
+          },
+
+          {
+            "@type": "AboutPage",
+            "@id": "https://vishalmall.vercel.app/about",
+
+            "url": "https://vishalmall.vercel.app/about",
+
+            "name": "About Vishal Mall",
+
+            "about": {
+              "@id": "https://vishalmall.vercel.app/#person"
+            },
+
+            "isPartOf": {
+              "@id": "https://vishalmall.vercel.app/#website"
+            }
+          },
+
+          {
+            "@type": "ContactPage",
+            "@id": "https://vishalmall.vercel.app/contact",
+
+            "url": "https://vishalmall.vercel.app/contact",
+
+            "name": "Contact Vishal Mall",
+
+            "about": {
+              "@id": "https://vishalmall.vercel.app/#person"
+            }
+          },
+
+          {
+            "@type": "Blog",
+            "@id": "https://vishalmall.vercel.app/blog",
+
+            "url": "https://vishalmall.vercel.app/blog",
+
+            "name": "Vishal Mall Blog",
+
+            "description": "Articles on Full Stack Development, React, Java, Spring Boot, Node.js and modern web technologies.",
+
+            "author": {
+              "@id": "https://vishalmall.vercel.app/#person"
+            },
+
+            "publisher": {
+              "@id": "https://vishalmall.vercel.app/#organization"
+            }
+          },
+
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://vishalmall.vercel.app/#breadcrumb",
+
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://vishalmall.vercel.app/"
+              }
+            ]
+          },
+
+          {
+            "@type": "SiteNavigationElement",
+            "@id": "https://vishalmall.vercel.app/#navigation",
+
+            "name": [
+              "Home",
+              "About",
+              "Skills",
+              "Projects",
+              "Services",
+              "Experience",
+              "Education",
+              "Certificates",
+              "Achievements",
+              "Gallery",
+              "Blog",
+              "Contact"
+            ],
+
+            "url": [
+              "https://vishalmall.vercel.app/",
+              "https://vishalmall.vercel.app/about",
+              "https://vishalmall.vercel.app/skills",
+              "https://vishalmall.vercel.app/projects",
+              "https://vishalmall.vercel.app/services",
+              "https://vishalmall.vercel.app/experience",
+              "https://vishalmall.vercel.app/education",
+              "https://vishalmall.vercel.app/certificates",
+              "https://vishalmall.vercel.app/achievements",
+              "https://vishalmall.vercel.app/gallery",
+              "https://vishalmall.vercel.app/blog",
+              "https://vishalmall.vercel.app/contact"
+            ]
+          },
+
+          {
+            "@type": "ItemList",
+            "@id": "https://vishalmall.vercel.app/#sections",
+
+            "name": "Portfolio Sections",
+
+            "numberOfItems": 12,
+
+            "itemListElement": [
+              {
+                "@type": "SiteNavigationElement",
+                "position": 1,
+                "name": "Home",
+                "url": "https://vishalmall.vercel.app/"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 2,
+                "name": "About",
+                "url": "https://vishalmall.vercel.app/about"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 3,
+                "name": "Skills",
+                "url": "https://vishalmall.vercel.app/skills"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 4,
+                "name": "Projects",
+                "url": "https://vishalmall.vercel.app/projects"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 5,
+                "name": "Services",
+                "url": "https://vishalmall.vercel.app/services"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 6,
+                "name": "Experience",
+                "url": "https://vishalmall.vercel.app/experience"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 7,
+                "name": "Education",
+                "url": "https://vishalmall.vercel.app/education"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 8,
+                "name": "Certificates",
+                "url": "https://vishalmall.vercel.app/certificates"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 9,
+                "name": "Achievements",
+                "url": "https://vishalmall.vercel.app/achievements"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 10,
+                "name": "Gallery",
+                "url": "https://vishalmall.vercel.app/gallery"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 11,
+                "name": "Blog",
+                "url": "https://vishalmall.vercel.app/blog"
+              },
+              {
+                "@type": "SiteNavigationElement",
+                "position": 12,
+                "name": "Contact",
+                "url": "https://vishalmall.vercel.app/contact"
+              }
+            ]
+          }
+        ]
       }
-    },
-
-    {
-      "@type": "ProfilePage",
-      "@id": "https://vishalmall.vercel.app/#profile",
-      "url": "https://vishalmall.vercel.app/",
-      "mainEntity": {
-        "@id": "https://vishalmall.vercel.app/#person"
-      },
-      "name": "Vishal Mall - Full Stack Developer"
-    },
-
-    {
-      "@type": "CreativeWork",
-      "@id": "https://vishalmall.vercel.app/#portfolio",
-      "name": "Vishal Mall Portfolio",
-      "creator": {
-        "@id": "https://vishalmall.vercel.app/#person"
-      },
-      "publisher": {
-        "@id": "https://vishalmall.vercel.app/#organization"
-      },
-      "image": {
-        "@id": "https://vishalmall.vercel.app/#image"
-      },
-      "url": "https://vishalmall.vercel.app/"
-    },
-
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://vishalmall.vercel.app/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://vishalmall.vercel.app/"
-        }
-      ]
-    }
-
-  ]
-}
-</script>
+    </script>
   </head>
   <body>
     <div id="root"></div>
