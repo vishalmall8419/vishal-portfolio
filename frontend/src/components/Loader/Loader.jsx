@@ -14,14 +14,14 @@ function Loader({ onComplete }) {
             if (onComplete) {
               onComplete();
             }
-          }, 500);
+          }, 400);
 
           return 100;
         }
 
         return prev + 1;
       });
-    }, 22);
+    }, 10);
 
     return () => clearInterval(interval);
   }, [onComplete]);
