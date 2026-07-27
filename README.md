@@ -6,13 +6,31 @@ A production-ready Full Stack Portfolio Website built with React, Vite, Bootstra
 
 ## 🌐 Live Demo
 
-> Coming Soon
+https://vishalmall.vercel.app/
 
 ---
 
 ## 📸 Screenshots
 
-> Add screenshots here after deployment.
+# Home Page
+<img width="854" height="412" alt="image" src="https://github.com/user-attachments/assets/adad48af-08ba-4203-876f-708399837ac4" />
+
+# Technology Stack
+<img width="862" height="409" alt="image" src="https://github.com/user-attachments/assets/24593944-e9cf-44ef-a1e3-3d510fd90d79" />
+
+# About Page
+<img width="856" height="407" alt="image" src="https://github.com/user-attachments/assets/61597908-e5ab-4397-99ef-c5570ab0f977" />
+
+# Achivements Page
+<img width="915" height="404" alt="image" src="https://github.com/user-attachments/assets/43ca7f05-abaa-4a94-b6e4-f0028f0463b7" />
+
+# Profile
+<img width="908" height="396" alt="image" src="https://github.com/user-attachments/assets/d13cf338-cd52-42c9-935e-c20ee7bd4a85" />
+
+# Chatboat
+<img width="911" height="393" alt="image" src="https://github.com/user-attachments/assets/da22139d-ac28-437e-bc32-011cb13ef89b" />
+
+
 
 ---
 
@@ -69,7 +87,7 @@ A production-ready Full Stack Portfolio Website built with React, Vite, Bootstra
 - VS Code
 - Git
 - GitHub
-- Postman
+
 
 ---
 
@@ -157,15 +175,15 @@ SMTP_PASS=
 
 **Vishal Mall**
 
-Full Stack Java Developer
+Full Stack Developer
 
 ---
 
 ## 📬 Contact
 
-- LinkedIn: *(Add your LinkedIn URL)*
-- GitHub: *(Add your GitHub URL)*
-- Email: *(Add your email)*
+- LinkedIn: https://www.linkedin.com/in/vishal-mall-536506302/
+- GitHub: (https://github.com/vishalmall8419)
+- Email: vishal.mall02@outlook.com
 
 ---
 
