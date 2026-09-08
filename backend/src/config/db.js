@@ -7,22 +7,38 @@ const sequelize = new Sequelize(
   process.env.DB_PASSWORD,
   {
     host: process.env.DB_HOST || "localhost",
-    port: process.env.DB_PORT || 3306,
+
+    // TiDB Cloud uses port 4000
+    port: Number(process.env.DB_PORT || 4000),
+
     dialect: "mysql",
+
+    // Show SQL queries only in development
     logging: process.env.NODE_ENV === "development" ? console.log : false,
+
     define: {
-      // camelCase in JS, matching column names 1:1 keeps the REST payloads
-      // identical to what the existing admin frontend already expects.
+      // Keep database column names in camelCase
       underscored: false,
+
+      // Automatically manage createdAt and updatedAt
       timestamps: true,
     },
-    // Set DB_SSL=true if the MySQL host requires TLS (some managed
-    // providers do). Railway's public proxy generally doesn't need this.
-    ...(process.env.DB_SSL === "true"
-      ? { dialectOptions: { ssl: { rejectUnauthorized: false } } }
-      : {}),
-    pool: { max: 10, min: 0, acquire: 30000, idle: 10000 },
-  }
+
+    // TiDB Cloud requires a secure TLS connection
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    },
+
+    // Database connection pool
+    pool: {
+      max: 10,
+      min: 0,
+      acquire: 30000,
+      idle: 10000,
+    },
+  },
 );
 
 module.exports = sequelize;
