@@ -10,7 +10,7 @@ function About() {
   const name = siteSettings?.name || "Vishal Mall";
   const role = siteSettings?.role || "Full Stack Developer";
   const location = siteSettings?.address || "Uttar Pradesh, India";
-  const exprience = siteSettings?.address || "Freasher";
+  const exprience = siteSettings?.exprience || "Freasher";
   const avatarUrl = resolveAssetUrl(siteSettings?.avatar);
   const resumeUrl = resolveAssetUrl(siteSettings?.resume);
 
