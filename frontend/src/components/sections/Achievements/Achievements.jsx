@@ -5,15 +5,21 @@ import SectionTitle from "../../ui/SectionTitle";
 import usePublicData from "../../../hooks/usePublicData";
 import { publicApi } from "../../../lib/publicApi";
 
+
 // Fallback only used if the Achievements CMS resource is empty/unreachable.
-const FALLBACK_ACHIEVEMENTS = [
-  { id: 1, value: "20+", title: "Projects Completed", description: "Developed multiple frontend, backend and full stack applications." },
-  { id: 2, value: "15+", title: "Technologies", description: "Hands-on experience with modern web development technologies." },
+
+
+function Achievements() {
+  const { data: settings } = usePublicData(() => publicApi.settings(), []);
+  const projects = settings?.stats["totalProjects"] || "10";
+  const technologies = settings?.stats["technologies"] || "15";
+
+  const FALLBACK_ACHIEVEMENTS = [
+  { id: 1, value: `${projects}+`, title: "Projects Completed", description: "Developed multiple frontend, backend and full stack applications." },
+  { id: 2, value: `${technologies}+`, title: "Technologies", description: "Hands-on experience with modern web development technologies." },
   { id: 3, value: "100%", title: "Learning Mindset", description: "Continuously learning new tools, frameworks and best practices." },
   { id: 4, value: "2028", title: "B.Tech Target", description: "Pursuing Bachelor's degree while building production-ready projects." },
 ];
-
-function Achievements() {
   const { data, loading } = usePublicData(() => publicApi.achievements(), []);
   const achievements =
     !loading && Array.isArray(data) && data.length

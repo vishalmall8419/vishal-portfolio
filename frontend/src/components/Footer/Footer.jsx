@@ -56,8 +56,6 @@ const FALLBACK_TECHNOLOGIES = [
   "Node.js",
   "Express.js",
   "MySQL",
-  "Java",
-  "Spring Boot",
   "GSAP",
   "Bootstrap",
 ];
@@ -73,12 +71,9 @@ const TECH_ICON_MAP = [
   [/javascript/i, SiJavascript],
   [/bootstrap/i, SiBootstrap],
   [/tailwind/i, SiTailwindcss],
-  [/spring/i, SiSpring],
   [/git(?!hub)/i, SiGit],
-  [/typescript/i, SiTypescript],
   [/html/i, SiHtml5],
   [/css/i, SiCss],
-  [/mongo/i, SiMongodb],
 ];
 
 const getTechIcon = (name = "") => {
@@ -181,8 +176,8 @@ function Footer() {
             </Link>
 
             <p className="vm-footer-brand-desc">
-              Java Full Stack Developer crafting modern, scalable and premium
-              web applications with clean architecture and thoughtful design.
+              React Frontend Developer building modern, responsive and engaging web applications with clean code, reusable components and thoughtful UI/UX design.
+
             </p>
 
             <span className="vm-footer-tagline">

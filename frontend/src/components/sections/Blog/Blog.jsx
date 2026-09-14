@@ -8,9 +8,35 @@ import { publicApi, resolveAssetUrl } from "../../../lib/publicApi";
 
 // Fallback only used if the Blogs CMS resource is empty/unreachable.
 const FALLBACK_BLOGS = [
-  { id: 1, category: "Java", title: "Building Enterprise Applications with Java", description: "Learn how to create scalable Java applications using modern architecture and best practices.", date: "12 Jul 2026", readTime: "8 min read" },
-  { id: 2, category: "React", title: "Creating Premium UI with React & Tailwind CSS", description: "A complete guide to building responsive and beautiful user interfaces.", date: "08 Jul 2026", readTime: "6 min read" },
-  { id: 3, category: "Full Stack", title: "Node.js, Express & MySQL REST API Guide", description: "Build secure, scalable and production-ready REST APIs from scratch.", date: "01 Jul 2026", readTime: "10 min read" },
+  {
+    id: 1,
+    category: "React",
+    title: "My Journey from Java to React Development",
+    description:
+      "How I started with Java and gradually moved into modern frontend development with React, JavaScript and responsive UI design.",
+    date: "12 Jul 2026",
+    readTime: "6 min read",
+  },
+
+  {
+    id: 2,
+    category: "JavaScript",
+    title: "JavaScript Concepts Every Frontend Developer Should Know",
+    description:
+      "A practical look at important JavaScript concepts like functions, arrays, destructuring, spread operators, closures and asynchronous programming.",
+    date: "08 Jul 2026",
+    readTime: "8 min read",
+  },
+
+  {
+    id: 3,
+    category: "React",
+    title: "Building Responsive Websites with React",
+    description:
+      "My approach to creating responsive React interfaces using reusable components, modern CSS, Bootstrap and Tailwind CSS.",
+    date: "01 Jul 2026",
+    readTime: "7 min read",
+  },
 ];
 
 function formatDate(value) {

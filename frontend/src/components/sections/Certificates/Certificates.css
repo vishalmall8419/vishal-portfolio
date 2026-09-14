@@ -24,21 +24,14 @@
 
 .vm-certificate-year {
   width: fit-content;
-
   padding: 10px 18px;
-
-  border-radius: 999px;
-
+  border-radius: 2px;
   margin-bottom: 22px;
-
   background: linear-gradient(
     135deg,
-    #6C63FF,
-    #00E5FF
+    #6C63FF
   );
-
   color: var(--text-on-accent);
-
   font-weight: 600;
 }
 

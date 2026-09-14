@@ -4,12 +4,12 @@ import usePublicData from "../../hooks/usePublicData";
 import { publicApi } from "../../lib/publicApi";
 
 const FALLBACK_STATS = {
-  totalProjects: 20,
+  totalProjects: 10,
   technologies: 15,
-  certifications: 5,
-  achievements: 5,
-  experience: 5,
-  happyClients: 100,
+  certifications: 0,
+  achievements: 0,
+  experience: 0,
+  happyClients: 0,
 };
 
 function Counter({ end, label }) {

@@ -18,7 +18,7 @@
 .vm-experience-card {
     position: relative;
     padding: 35px 35px 35px 150px;
-    border-radius: 24px;
+    border-radius: 6px;
 
     overflow: hidden;
     isolation: isolate;
@@ -42,16 +42,17 @@
     min-width: 95px;
     height: 42px;
 
-    border-radius: 999px;
+    border-radius: 3px;
 
     background: linear-gradient(
         135deg,
         #6C63FF,
         #00E5FF
     );
+    padding: 4px;
 
     color: var(--text-on-accent);
-    font-size: .85rem;
+    font-size: .80rem;
     font-weight: 600;
 }
 

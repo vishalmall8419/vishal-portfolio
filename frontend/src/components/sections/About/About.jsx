@@ -8,8 +8,9 @@ import { resolveAssetUrl } from "../../../lib/publicApi";
 function About() {
   const { siteSettings } = useTheme();
   const name = siteSettings?.name || "Vishal Mall";
-  const role = siteSettings?.role || "Java Full Stack Developer";
+  const role = siteSettings?.role || "Full Stack Developer";
   const location = siteSettings?.address || "Uttar Pradesh, India";
+  const exprience = siteSettings?.address || "Freasher";
   const avatarUrl = resolveAssetUrl(siteSettings?.avatar);
   const resumeUrl = resolveAssetUrl(siteSettings?.resume);
 
@@ -29,8 +30,7 @@ function About() {
 
           <div className="vm-about-image">
 
-            <GlassCard padding="lg">
-
+            <div>
               {avatarUrl ? (
                 <img src={avatarUrl} alt={name} className="vm-about-photo" />
               ) : (
@@ -41,7 +41,7 @@ function About() {
                 </div>
               )}
 
-            </GlassCard>
+            </div>
 
           </div>
 
@@ -63,23 +63,23 @@ function About() {
               <div className="vm-about-info">
 
                 <div>
-                  <strong>Name</strong>
+                  <strong>Name </strong>
                   <span>{name}</span>
                 </div>
 
                 <div>
-                  <strong>Role</strong>
+                  <strong>Role </strong>
                   <span>{role}</span>
                 </div>
 
                 <div>
-                  <strong>Location</strong>
+                  <strong>Location </strong>
                   <span>{location}</span>
                 </div>
 
                 <div>
-                  <strong>Experience</strong>
-                  <span>Learning & Building Projects</span>
+                  <strong>Experience </strong>
+                  <span>{exprience}</span>
                 </div>
 
               </div>

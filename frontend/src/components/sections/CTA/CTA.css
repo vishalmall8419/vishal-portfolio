@@ -1,5 +1,5 @@
 .vm-cta{
-    padding:140px 8%;
+    padding:0px 3%;
     position:relative;
 }
 
@@ -9,17 +9,17 @@
 
     margin:auto;
 
-    padding:100px 60px;
+    padding:56px 44px;
 
     text-align:center;
 
-    border-radius:40px;
+    border-radius:6px;
 
     background:
     linear-gradient(
         135deg,
-        rgba(108,99,255,.18),
-        rgba(0,229,255,.18)
+        rgba(107, 99, 255, 0.05),
+        rgba(0, 229, 255, 0.084)
     );
 
     border:1px solid var(--glass-border);

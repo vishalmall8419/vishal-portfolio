@@ -17,7 +17,7 @@
 .vm-education-card {
   position: relative;
   padding-left: 120px;
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 }
 
 .vm-education-card:hover {
@@ -32,22 +32,18 @@
   width: 70px;
   height: 70px;
 
-  border-radius: 50%;
-
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background: linear-gradient(
-    135deg,
-    #6C63FF,
-    #00E5FF
-  );
+  background: linear-gradient(135deg, #6c63ff, #00e5ff);
 
   color: var(--text-on-accent);
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-align: center;
+  border-radius: 3px;
+  padding: 4px;
 }
 
 .vm-education-card h3 {
@@ -57,7 +53,7 @@
 }
 
 .vm-education-card h4 {
-  color: #00E5FF;
+  color: #00e5ff;
   margin-bottom: 10px;
 }
 
@@ -80,23 +76,17 @@
   border: 1px solid var(--glass-border);
 }
 
-@media (max-width:768px){
-
-  .vm-education-card{
-
-    padding-left:30px;
-
+@media (max-width: 768px) {
+  .vm-education-card {
+    padding-left: 30px;
   }
 
-  .vm-year{
+  .vm-year {
+    position: relative;
 
-    position:relative;
+    left: 0;
+    top: 0;
 
-    left:0;
-    top:0;
-
-    margin-bottom:20px;
-
+    margin-bottom: 20px;
   }
-
 }

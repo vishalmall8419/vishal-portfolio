@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
-import aboutImage from "../../../assets/images/profile/about.webp";
+// import aboutImage from "../../../assets/images/profile/about.webp";
 import { gsap } from "../../../lib/gsap";
 import useScrollReveal from "../hooks/useScrollReveal";
 import useTheme from "../../../hooks/useTheme";
@@ -53,7 +53,7 @@ function WhoIAm() {
                 <div className="who__media">
                     <div className="who__media-glow" aria-hidden="true" />
                     <figure className="who__frame">
-                        <img src={resolveAssetUrl(siteSettings?.avatar) || aboutImage} alt={`${siteSettings?.name || "Vishal Mall"} at work`} />
+                        <img src={resolveAssetUrl(siteSettings?.avatar)} alt={`${siteSettings?.name || "Vishal Mall"} at work`} />
                     </figure>
                 </div>
 

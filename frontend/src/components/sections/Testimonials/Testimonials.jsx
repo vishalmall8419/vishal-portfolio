@@ -7,9 +7,9 @@ import { publicApi, resolveAssetUrl } from "../../../lib/publicApi";
 
 // Fallback only used if the Testimonials CMS resource is empty/unreachable.
 const FALLBACK_TESTIMONIALS = [
-  { id: 1, name: "John Anderson", role: "Frontend Developer", message: "Vishal builds clean, responsive and modern user interfaces with great attention to detail." },
-  { id: 2, name: "Sarah Williams", role: "UI/UX Designer", message: "Professional approach, modern design thinking and excellent development skills." },
-  { id: 3, name: "David Miller", role: "Software Engineer", message: "Great problem solving skills and a continuous learning mindset. Highly recommended." },
+  { id: 1, name: "Mohit Kumar", role: "Frontend Developer", message: "Vishal builds clean, responsive and modern user interfaces with great attention to detail." },
+  { id: 2, name: "Sarad Kumar", role: "UI/UX Designer", message: "Professional approach, modern design thinking and excellent development skills." },
+  { id: 3, name: "Ankit Sharma", role: "DEVOPS Engineer", message: "Great problem solving skills and a continuous learning mindset. Highly recommended." },
 ];
 
 function Testimonials() {

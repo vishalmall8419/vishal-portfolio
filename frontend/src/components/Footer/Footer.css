@@ -212,7 +212,7 @@
   align-items: center;
   gap: 9px;
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: 4px;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   font-size: 0.82rem;
@@ -251,17 +251,17 @@
   isolation: isolate;
   overflow: hidden;
   padding: 30px;
-  border-radius: 26px;
+  border-radius: 4px;
 
-  background: linear-gradient(
+  /* background: linear-gradient(
     155deg,
     rgba(255, 255, 255, 0.09) 0%,
     rgba(255, 255, 255, 0.045) 45%,
     rgba(255, 255, 255, 0.02) 100%
-  );
+  ); */
   border: 1px solid var(--glass-border);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  /* backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur); */
 
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18), inset 0 1px 1px rgba(255, 255, 255, 0.12);
 
@@ -340,7 +340,7 @@
   align-items: center;
   gap: 8px;
   padding: 9px 14px;
-  border-radius: 12px;
+  border-radius: 2px;
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text-light);
@@ -391,7 +391,7 @@
   flex: 1;
   min-width: 160px;
   padding: 13px 18px;
-  border-radius: 12px;
+  border-radius: 3px;
   border: 1px solid var(--glass-border);
   background: var(--surface);
   color: var(--text);
@@ -418,7 +418,7 @@
   align-items: center;
   gap: 8px;
   padding: 13px 22px;
-  border-radius: 12px;
+  border-radius: 2px;
   border: none;
   background: var(--gradient-primary);
   color: var(--text-on-accent);

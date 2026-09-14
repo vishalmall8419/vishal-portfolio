@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
-import aboutImage from "../../../assets/images/profile/about.webp";
+// import aboutImage from "../../../assets/images/profile/about.webp";
 import heroBgPhoto from "../../../assets/images/backgrounds/hero-night-sky.avif";
 import { FaArrowDownLong } from "react-icons/fa6";
 import { FiDownload } from "react-icons/fi";
@@ -136,7 +136,7 @@ function Hero() {
                     <div className="hero__portrait-glow" aria-hidden="true" />
 
                     <figure className="hero__frame">
-                        <img src={resolveAssetUrl(siteSettings?.avatar) || aboutImage} alt={`Portrait of ${siteSettings?.name || "Vishal Mall"}`} />
+                        <img src={resolveAssetUrl(siteSettings?.avatar)} alt={`Portrait of ${siteSettings?.name || "Vishal Mall"}`} />
                     </figure>
 
                     <ul className="hero__tags" aria-label="Core technologies">

@@ -4,20 +4,13 @@
     isolation: isolate;
 
     padding: 30px;
-    border-radius: 28px;
+    border-radius: 06px;
 
-    background:
-        linear-gradient(
-            155deg,
-            rgba(255, 255, 255, 0.10) 0%,
-            rgba(255, 255, 255, 0.05) 45%,
-            rgba(255, 255, 255, 0.02) 100%
-        );
 
-    border: 1px solid rgba(255,255,255,.08);
+    /* border: 1px solid rgba(255,255,255,.08); */
 
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
+    /* backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px); */
 
     box-shadow:
         0 12px 30px rgba(0,0,0,.20),
@@ -36,13 +29,6 @@
     position:absolute;
     inset:1px;
     border-radius:inherit;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.14),
-            transparent 35%
-        );
 
     pointer-events:none;
 }

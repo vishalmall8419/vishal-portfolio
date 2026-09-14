@@ -38,9 +38,9 @@
 .vm-skill-chip {
   padding: 12px 20px;
 
-  border-radius: 999px;
+  border-radius: 2px;
 
-  background: var(--glass-bg);
+  /* background: var(--glass-bg); */
 
   border: 1px solid var(--glass-border);
 

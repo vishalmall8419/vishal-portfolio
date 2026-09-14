@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Profile.css";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer/Footer";
-import profileImg from "../../assets/images/profile/hero.webp";
+// import profileImg from "../../assets/images/profile/hero.webp";
 import usePublicData from "../../hooks/usePublicData";
 import { publicApi, resolveAssetUrl } from "../../lib/publicApi";
 import useTheme from "../../hooks/useTheme";
@@ -184,7 +184,7 @@ const Hero = () => {
   const orbBRef = useRef(null);
   const avatarRef = useRef(null);
   const { siteSettings } = useTheme();
-  const avatarSrc = resolveAssetUrl(siteSettings?.avatar) || profileImg;
+  const avatarSrc = resolveAssetUrl(siteSettings?.avatar);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {

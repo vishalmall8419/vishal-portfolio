@@ -6,7 +6,7 @@ import "./Hero.css";
 import Button from "../../ui/Button";
 import useTheme from "../../../hooks/useTheme";
 import { resolveAssetUrl } from "../../../lib/publicApi";
-import heroFallback from "../../../assets/images/profile/hero.webp";
+// import heroFallback from "../../../assets/images/profile/hero.webp";
 import heroBgPhoto from "../../../assets/images/backgrounds/hero-night-sky.avif";
 
 function Hero() {
@@ -15,7 +15,7 @@ function Hero() {
 
   const { siteSettings } = useTheme();
 
-  const avatarSrc = resolveAssetUrl(siteSettings?.avatar) || heroFallback;
+  const avatarSrc = resolveAssetUrl(siteSettings?.avatar);
   const name = siteSettings?.name || "Vishal Mall";
   const resumeUrl = resolveAssetUrl(siteSettings?.resume);
 
